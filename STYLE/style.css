@@ -3,4 +3,221 @@
     top: 0;
     left: 0;
     box-sizing: border-box;
+    font-family: 'montserrat';
+}
+
+body{
+    background-color: rgb(35, 37, 44);
+}
+
+.layout-0{
+
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapa-geral img{
+    width: 100%;
+    border: 13px solid #195c70;
+    box-shadow: 3px 3px 30px black;
+}
+
+/*------------------------------------------------------------------------*/
+
+.grid-02{
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: scroll;
+}
+.grid-02::-webkit-scrollbar {
+    width: 10px; /* Largura da barra */
+  }
+  
+  .grid-02::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor do "polegar" */
+    border-radius: 50px; /* Arredondamento */
+  }
+  
+  .grid-02::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Cor ao passar o mouse */
+  }
+  
+  .grid-02::-webkit-scrollbar-track {
+    background: #3c4258; /* Cor do trilho */
+  }
+
+.jogador-char{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: rgb(192, 169, 38);
+    padding: 20px;
+    margin: 15px;
+    border-radius: 35px;
+    box-shadow: 3px 3px 30px black;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center
+}
+
+.jogador-char img{
+    width: 100%;
+}
+
+.name input{
+    width: 80%;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+    background-color: rgb(153, 134, 29);
+    color: gold;
+    margin-bottom: 15px;
+}
+
+.pontos-vida{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.pontos-vida p{
+    background-color: rgb(218, 192, 45);;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.rodada-stats{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+}
+.rodada-stats input{
+    width: 30%;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+    background-color: rgb(153, 134, 29);
+    color: gold;
+}
+.rodada-stats input::placeholder {
+    color: rgb(73, 69, 44);
+    font-style: italic;
+}
+.rodada-stats button{
+    width: 30%;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+    background-color: #6b5d0a;
+    color: gold;
+}
+
+.statsbase{
+    width: 50px;
+    height: 50px;
+    padding-top: 5px;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.status{
+    display: flex;
+    gap: 25px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.status input{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: none;
+    text-align: center;
+    padding: 15px;
+    font-style: italic;
+}
+
+.forc{
+    color: red;
+    background-color: rgb(158, 57, 57);
+    box-shadow: 0px 0px 20px red;
+}
+
+.agil{
+    color: yellow;
+    background-color: rgb(197, 197, 68);
+    box-shadow: 0px 0px 20px rgb(124, 124, 29);
+}
+.perc{
+    color: blue;
+    background-color: rgb(96, 125, 221);
+    box-shadow: 0px 0px 20px blue;
+}
+
+/*------------------------------------------------------------------------*/
+
+.grid-03{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+/*------------------------------------------------------------------------*/
+
+.acoes-jogadores{
+    background-color: #1a4e27;
+    border-radius: 35px;
+    margin: 20px;
+    color: #16b13d;
+    
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-dado{
+    width: 60%;
+    height: 10%;
+    border-radius: 25px;
+    background-color: #19702f;
+    border: 5px solid #16b13d;
+    color: #16b13d;
+    box-shadow: 3px 3px 30px #19702f;
+    cursor: pointer;
+}
+
+/*------------------------------------------------------------------------*/
+
+.alteradores{
+    background-color: #1a4e27;
+    border-radius: 35px;
+    margin: 20px;
+    color: #16b13d;
+    
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.alteradores img{
+    width: 40%;
+    margin-bottom: 35px;
 }
