@@ -85,10 +85,17 @@ body{
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
 }
+
 .pontos-vida p{
-    background-color: rgb(218, 192, 45);;
+    background-color: rgb(218, 192, 45);
+    color: white;
     padding: 10px;
     border-radius: 100%;
+    cursor: pointer;
+}
+
+.pontos-vida .skull{
+    background-color: rgb(61, 61, 61);
 }
 
 .rodada-stats{
@@ -96,10 +103,10 @@ body{
     align-items: center;
     text-align: center;
     justify-content: center;
-    gap: 30px;
+    gap: 15px;
 }
 .rodada-stats input{
-    width: 30%;
+    width: 50%;
     height: 35px;
     border-radius: 15px;
     border: none;
@@ -112,13 +119,14 @@ body{
     font-style: italic;
 }
 .rodada-stats button{
-    width: 30%;
+    width: 100%;
     height: 35px;
     border-radius: 15px;
     border: none;
     text-align: center;
     background-color: #6b5d0a;
     color: gold;
+    cursor: pointer;
 }
 
 .statsbase{
@@ -189,16 +197,60 @@ body{
     justify-content: center;
     align-items: center;
 }
+.acoes-jogadores h1{
+    width: 70%;
+    font-size: 25px;
+}
 
 .btn-dado{
     width: 60%;
     height: 10%;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
     border-radius: 25px;
     background-color: #19702f;
-    border: 5px solid #16b13d;
-    color: #16b13d;
+    border: 4px solid #1f7a36;
+    color: #1ac244;
     box-shadow: 3px 3px 30px #19702f;
     cursor: pointer;
+    margin: 20px 0px;
+}
+.btn-limpar{
+    width: 50%;
+    height: 7%;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 25px;
+    background-color: #19702f;
+    border: 4px solid #1f7a36;
+    color: #1ac244;
+    box-shadow: 3px 3px 30px #19702f;
+    cursor: pointer;
+    margin: 20px 0px;
+}
+
+.btn-stats-select{
+    width: 60px;
+    height: 60px;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: none;
+}
+.selected {
+    background-color: #363636;
+    color: white;
+    box-shadow: 0px 0px 20px white;
+}
+
+.result{
+    font-size: 20px;
+    font-weight: bold;
+    width: 70%;
 }
 
 /*------------------------------------------------------------------------*/
