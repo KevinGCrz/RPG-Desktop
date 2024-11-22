@@ -21,11 +21,47 @@ body{
     justify-content: center;
 }
 
-.mapa-geral img{
+
+.mapa-image{
     width: 100%;
     border: 13px solid #195c70;
     box-shadow: 3px 3px 30px black;
 }
+.icon-mapa{
+    border: 3px solid gold;
+    border-radius: 100%;
+    box-shadow: 3px 3px 30px black;
+}
+
+#drag-icon {
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: 100px;
+    cursor: grab; /* Mostra o cursor de "mão" ao passar pelo ícone */
+}
+
+#drag-icon:active {
+    cursor: grabbing; /* Mostra o cursor de "mão segurando" ao arrastar */
+}
+
+
+.toggle-visibility {
+    background-color: #19702F;
+    color: #1AC244;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #1AC244;
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.toggle-visibility:hover {
+    background-color: #1AC244;
+    color: #19702F;
+}
+
 
 /*------------------------------------------------------------------------*/
 
@@ -52,14 +88,51 @@ body{
   }
 
 .jogador-char{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     background-color: rgb(192, 169, 38);
     padding: 20px;
     margin: 15px;
     border-radius: 35px;
     box-shadow: 3px 3px 30px black;
+    text-align: end;
+}
+.jogador-char {
+    transition: all 0.3s ease; /* Suaviza a transição */
+}
 
+/* Estilo quando minimizado */
+.jogador-char.minimized {
+    background-color: #1f7a36; /* Cor de fundo ao minimizar */
+    padding: 5px; /* Espaçamento interno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jogador-char.minimized .view-jogador {
+    display: none; /* Esconde todo o conteúdo interno */
+}
+
+.jogador-char.minimized h1 {
+    display: block; /* Mostra o título */
+    color: #fff; /* Cor do texto */
+    font-size: 1.5em; /* Ajusta o tamanho do texto */
+    margin: 0; /* Remove margens externas */
+    text-align: center; /* Centraliza o texto */
+}
+.jogador-char.minimized .view-jogador {
+    display: none; /* Esconde o conteúdo */
+}
+
+.jogador-char.minimized .toggle-visibility {
+    display: block; /* Garante que o botão fique visível */
+}
+
+
+
+
+.view-jogador{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     text-align: center;
     align-items: center;
     justify-content: center
@@ -67,6 +140,10 @@ body{
 
 .jogador-char img{
     width: 100%;
+}
+
+.elementos h1{
+    margin-top: 0px;
 }
 
 .name input{
@@ -77,7 +154,9 @@ body{
     text-align: center;
     background-color: rgb(153, 134, 29);
     color: gold;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .pontos-vida{
@@ -88,6 +167,7 @@ body{
 
 .pontos-vida p{
     background-color: rgb(218, 192, 45);
+    box-shadow: 0px 0px 20px rgb(124, 124, 29);
     color: white;
     padding: 10px;
     border-radius: 100%;
@@ -96,6 +176,7 @@ body{
 
 .pontos-vida .skull{
     background-color: rgb(61, 61, 61);
+    box-shadow: 0px 0px 20px red;
 }
 
 .rodada-stats{
@@ -113,6 +194,8 @@ body{
     text-align: center;
     background-color: rgb(153, 134, 29);
     color: gold;
+    font-weight: bold;
+    font-size: 14px;
 }
 .rodada-stats input::placeholder {
     color: rgb(73, 69, 44);
@@ -127,6 +210,8 @@ body{
     background-color: #6b5d0a;
     color: gold;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .statsbase{

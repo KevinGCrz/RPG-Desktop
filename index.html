@@ -15,8 +15,10 @@
 
         <div class="grid-01">
 
-            <div class="mapa-geral">
-                <img src="./IMAGES/Mapa TCC 01.jpg" alt="">
+            <div class="mapa-geral" style="position: relative;">
+                <img class="mapa-image" src="./IMAGES/Mapa TCC 01.jpg" alt="Mapa Geral">
+
+                <img class="icon-mapa" src="./IMAGES/propICON.png" alt="Ícone" id="drag-icon" style="position: absolute; top: 50px; left: 50px; cursor: grab;">
             </div>
     
         </div>
@@ -26,30 +28,34 @@
 
                 <!---------------------1-->
                 <div class="jogador-char">
+
+                    <button class="toggle-visibility">Minimizar</button>
                     
-                    <img src="./IMAGES/propICON.png" alt="">
+                    <div class="view-jogador">
+                        <img src="./IMAGES/ICON-ML.png" alt="">
                     
-                    <div class="elementos">
-                        <h1>Mestre das lâminas</h1>
-                        <div class="name">
-                            <input type="text">  
-                        </div>
-                        <div class="status">
-                            <input class="statsbase forc" placeholder="16">
-                            <input class="statsbase agil" placeholder="7">
-                            <input class="statsbase perc" placeholder="8">
-                        </div>
-                        <div class="pontos-vida">
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                        </div>
-                        <div class="rodada-stats">
-                            <input type="text" placeholder="Rodada N°">
-                            <button>Meu turno</button>
+                        <div class="elementos">
+                            <h1>Mestre das lâminas</h1>
+                            <div class="name">
+                                <input type="text">  
+                            </div>
+                            <div class="status">
+                                <input class="statsbase forc" placeholder="16">
+                                <input class="statsbase agil" placeholder="9">
+                                <input class="statsbase perc" placeholder="8">
+                            </div>
+                            <div class="pontos-vida">
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                            </div>
+                            <div class="rodada-stats">
+                                <input type="text" placeholder="Rodada N°">
+                                <button>Meu turno</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,30 +63,34 @@
 
                 <!---------------------2-->
                 <div class="jogador-char">
+
+                    <button class="toggle-visibility">Minimizar</button>
                     
-                    <img src="./IMAGES/propICON.png" alt="">
-                    
-                    <div class="elementos">
-                        <h1>Cozinheiro</h1>
-                        <div class="name">
-                            <input type="text">  
-                        </div>
-                        <div class="status">
-                            <input class="statsbase forc" placeholder="10">
-                            <input class="statsbase agil" placeholder="12">
-                            <input class="statsbase perc" placeholder="9">
-                        </div>
-                        <div class="pontos-vida">
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                        </div>
-                        <div class="rodada-stats">
-                            <input type="text" placeholder="Rodada N°">
-                            <button>Meu turno</button>
+                    <div class="view-jogador">
+                        <img src="./IMAGES/ICON-CO.png" alt="">
+                        
+                        <div class="elementos">
+                            <h1>Cozinheiro</h1>
+                            <div class="name">
+                                <input type="text">  
+                            </div>
+                            <div class="status">
+                                <input class="statsbase forc" placeholder="10">
+                                <input class="statsbase agil" placeholder="12">
+                                <input class="statsbase perc" placeholder="9">
+                            </div>
+                            <div class="pontos-vida">
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                            </div>
+                            <div class="rodada-stats">
+                                <input type="text" placeholder="Rodada N°">
+                                <button>Meu turno</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,34 +98,213 @@
                 
                 <!---------------------3-->
                 <div class="jogador-char">
+
+                    <button class="toggle-visibility">Minimizar</button>
                     
-                    <img src="./IMAGES/propICON.png" alt="">
-                    
-                    <div class="elementos">
-                        <h1>Feiticeiro</h1>
-                        <div class="name">
-                            <input type="text">  
-                        </div>
-                        <div class="status">
-                            <input class="statsbase forc" placeholder="7">
-                            <input class="statsbase agil" placeholder="14">
-                            <input class="statsbase perc" placeholder="14">
-                        </div>
-                        <div class="pontos-vida">
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                            <p class="heart">❤</p>
-                        </div>
-                        <div class="rodada-stats">
-                            <input type="text" placeholder="Rodada N°">
-                            <button>Meu turno</button>
+                    <div class="view-jogador">
+                        <img src="./IMAGES/ICON-FE.png" alt="">
+                        
+                        <div class="elementos">
+                            <h1>Feiticeiro</h1>
+                            <div class="name">
+                                <input type="text">  
+                            </div>
+                            <div class="status">
+                                <input class="statsbase forc" placeholder="7">
+                                <input class="statsbase agil" placeholder="14">
+                                <input class="statsbase perc" placeholder="14">
+                            </div>
+                            <div class="pontos-vida">
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                            </div>
+                            <div class="rodada-stats">
+                                <input type="text" placeholder="Rodada N°">
+                                <button>Meu turno</button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!---------------------3--> 
+
+                <!---------------------4-->
+                <div class="jogador-char">
+
+                    <button class="toggle-visibility">Minimizar</button>
+                    
+                    <div class="view-jogador">
+                        <img src="./IMAGES/ICON-AP.png" alt="">
+                        
+                        <div class="elementos">
+                            <h1>Apostador</h1>
+                            <div class="name">
+                                <input type="text">  
+                            </div>
+                            <div class="status">
+                                <input class="statsbase forc" placeholder="7">
+                                <input class="statsbase agil" placeholder="8">
+                                <input class="statsbase perc" placeholder="16">
+                            </div>
+                            <div class="pontos-vida">
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                            </div>
+                            <div class="rodada-stats">
+                                <input type="text" placeholder="Rodada N°">
+                                <button>Meu turno</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------4--> 
+
+                <!---------------------5-->
+                <div class="jogador-char">
+
+                    <button class="toggle-visibility">Minimizar</button>
+                    
+                    <div class="view-jogador">
+                        <img src="./IMAGES/ICON-BO.png" alt="">
+                        
+                        <div class="elementos">
+                            <h1>Bombardeiro</h1>
+                            <div class="name">
+                                <input type="text">  
+                            </div>
+                            <div class="status">
+                                <input class="statsbase forc" placeholder="8">
+                                <input class="statsbase agil" placeholder="10">
+                                <input class="statsbase perc" placeholder="16">
+                            </div>
+                            <div class="pontos-vida">
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                            </div>
+                            <div class="rodada-stats">
+                                <input type="text" placeholder="Rodada N°">
+                                <button>Meu turno</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------5--> 
+
+                <!---------------------6-->
+                <div class="jogador-char">
+
+                    <button class="toggle-visibility">Minimizar</button>
+                    
+                    <div class="view-jogador">
+                        <img src="./IMAGES/ICON-MF.png" alt="">
+                        
+                        <div class="elementos">
+                            <h1>Mestre das feras</h1>
+                            <div class="name">
+                                <input type="text">  
+                            </div>
+                            <div class="status">
+                                <input class="statsbase forc" placeholder="11">
+                                <input class="statsbase agil" placeholder="6">
+                                <input class="statsbase perc" placeholder="14">
+                            </div>
+                            <div class="pontos-vida">
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                            </div>
+                            <div class="rodada-stats">
+                                <input type="text" placeholder="Rodada N°">
+                                <button>Meu turno</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------6--> 
+
+                <!---------------------7-->
+                <div class="jogador-char">
+
+                    <button class="toggle-visibility">Minimizar</button>
+                    
+                    <div class="view-jogador">
+                        <img src="./IMAGES/propICON.png" alt="">
+                        
+                        <div class="elementos">
+                            <h1>Druida</h1>
+                            <div class="name">
+                                <input type="text">  
+                            </div>
+                            <div class="status">
+                                <input class="statsbase forc" placeholder="7">
+                                <input class="statsbase agil" placeholder="8">
+                                <input class="statsbase perc" placeholder="15">
+                            </div>
+                            <div class="pontos-vida">
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                            </div>
+                            <div class="rodada-stats">
+                                <input type="text" placeholder="Rodada N°">
+                                <button>Meu turno</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------7--> 
+
+                <!---------------------8-->
+                <div class="jogador-char">
+
+                    <button class="toggle-visibility">Minimizar</button>
+                    
+                    <div class="view-jogador">
+                        <img src="./IMAGES/propICON.png" alt="">
+                        
+                        <div class="elementos">
+                            <h1>Viking</h1>
+                            <div class="name">
+                                <input type="text">  
+                            </div>
+                            <div class="status">
+                                <input class="statsbase forc" placeholder="16">
+                                <input class="statsbase agil" placeholder="5">
+                                <input class="statsbase perc" placeholder="6">
+                            </div>
+                            <div class="pontos-vida">
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                                <p class="heart">❤</p>
+                            </div>
+                            <div class="rodada-stats">
+                                <input type="text" placeholder="Rodada N°">
+                                <button>Meu turno</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------8--> 
 
             </div>
             
