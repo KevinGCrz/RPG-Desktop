@@ -171,19 +171,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const monstrosOriginais  = [
         {
             nome: "Lobos Selvagens",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-Lobos.jpg",
             desc:"Uma horda de 3 lobos, cada um com dois pontos de vida",
             coracoes: 6
         },
         {
             nome: "Iguana gigante",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-Iguana.jpg",
             desc:"Uma enorme e furiosa",
             coracoes: 4
         },
         {
             nome: "3 Goblins saqueadores",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-Goblins.jpg",
             desc:"Uma horda de 3 goblis, cada um com um ponto de vida",
             coracoes: 3
         },
@@ -195,13 +195,13 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             nome: "2 Hienas demoniacas",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-Hienas.jpg",
             desc:"Uma horda de 2 hienas, cada um com três pontos de vida",
             coracoes: 6
         },
         {
             nome: "Urso de guerra zumbi",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-UrsoZumbi.jpg",
             desc:"Irrefreavel e morrendo de fome",
             coracoes: 6
         },
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             nome: "Homem morcego selvagem",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-HomemMorcego.jpg",
             desc:"Cego mas com uma aldição absurda",
             coracoes: 5
         },
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             nome: "Pantera de duas cabeças",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-PanteraTwoHead.webp",
             desc:"Duplamente com fome",
             coracoes: 5
         },
@@ -267,19 +267,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             nome: "Golem elemental",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-Golem.jpg",
             desc:"Guardião ancestral da arena",
             coracoes: 5
         },
         {
             nome: "Carangueijo colosso",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-Caranguejo.jpg",
             desc:"Criatura ancestral tão velha quanto a ilha",
             coracoes: 6
         },
         {
             nome: "Urso tubarão",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-Ursotubarao.webp",
             desc:"A brutalidade das duas criaturas",
             coracoes: 4
         },
