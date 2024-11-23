@@ -1,3 +1,4 @@
+//-----------------------------------------------------D20 FUNCIONAL    
 document.addEventListener('DOMContentLoaded', () => {
     const players = document.querySelectorAll('.jogador-char');
     const statusSelectedDiv = document.querySelector('.status-selecionado');
@@ -6,24 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentClassTitleDisplay = document.querySelector('.acoes-jogadores h1:nth-of-type(1)'); // "A vez de..."
     const diceNumberDisplay = document.querySelector('.acoes-jogadores h1:nth-of-type(2)'); // Número do dado
     const resultParagraph = document.querySelector('.acoes-jogadores p');
-    const statsButtons = statusSelectedDiv.querySelectorAll('.btn-stats-select');
-    
-    const pontosVida = document.querySelectorAll('.pontos-vida p');
-    
-    // Função para alternar entre os emojis
-    pontosVida.forEach(ponto => {
-        ponto.addEventListener('click', () => {
-            if (ponto.classList.contains('heart')) {
-                ponto.classList.remove('heart');
-                ponto.classList.add('skull');  // Troca para a classe "skull"
-                ponto.textContent = '💀';      // Altera para o emoji de caveira
-            } else {
-                ponto.classList.remove('skull');
-                ponto.classList.add('heart');  // Troca para a classe "heart"
-                ponto.textContent = '❤';      // Altera para o emoji de coração
-            }
-        });
-    });
+    const statsButtons = statusSelectedDiv ? statusSelectedDiv.querySelectorAll('.btn-stats-select') : [];
+
+    if (statsButtons.length === 0) {
+        console.warn("Nenhum botão de status encontrado.");
+    }
 
     let selectedStatus = null;
     let currentClassTitle = "";
@@ -40,33 +28,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Transferir status do jogador atual para a interface de seleção
     players.forEach(player => {
         const turnoButton = player.querySelector('.rodada-stats button');
-        turnoButton.addEventListener('click', () => {
-            const stats = player.querySelectorAll('.status input');
-            const title = player.querySelector('h1');
-            const rodadaInput = player.querySelector('.rodada-stats input');
+        if (turnoButton) {
+            turnoButton.addEventListener('click', () => {
+                const stats = player.querySelectorAll('.status input');
+                const title = player.querySelector('h1');
+                const rodadaInput = player.querySelector('.rodada-stats input');
 
-            // Atualiza os valores nos botões de status
-            statsButtons[0].textContent = stats[0].value || 0; // Força
-            statsButtons[1].textContent = stats[1].value || 0; // Agilidade
-            statsButtons[2].textContent = stats[2].value || 0; // Percepção
+                // Atualiza os valores nos botões de status
+                statsButtons[0].textContent = stats[0].value || 0; // Força
+                statsButtons[1].textContent = stats[1].value || 0; // Agilidade
+                statsButtons[2].textContent = stats[2].value || 0; // Percepção
 
-            // Atualiza o título da classe atual
-            currentClassTitle = title.textContent;
+                // Atualiza o título da classe atual
+                currentClassTitle = title.textContent;
 
-            // Atualiza a exibição no título da vez
-            currentClassTitleDisplay.textContent = `A vez de ${currentClassTitle} testar sua sorte`;
+                // Atualiza a exibição no título da vez
+                currentClassTitleDisplay.textContent = `A vez de ${currentClassTitle} testar sua sorte`;
 
-            // Incrementa o número no input "Rodada N°"
-            rodadaInput.value = parseInt(rodadaInput.value || 0, 10) + 1;
+                // Incrementa o número no input "Rodada N°"
+                rodadaInput.value = parseInt(rodadaInput.value || 0, 10) + 1;
 
-            // Limpa os resultados da rodada anterior
-            diceNumberDisplay.textContent = "?"; // Limpa o número do dado
-            resultParagraph.textContent = ""; // Limpa o resultado
+                // Limpa os resultados da rodada anterior
+                diceNumberDisplay.textContent = "?"; // Limpa o número do dado
+                resultParagraph.textContent = ""; // Limpa o resultado
 
-            // Resetar seleção de status
-            selectedStatus = null;
-            statsButtons.forEach(button => button.classList.remove('selected'));
-        });
+                // Resetar seleção de status
+                selectedStatus = null;
+                statsButtons.forEach(button => button.classList.remove('selected'));
+            });
+        }
     });
 
     // Lógica para rodar o dado e calcular o resultado
@@ -88,9 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
             Número sorteado: ${randomRoll}, Soma: ${total}. 
         `;
         if (total >= 25) {
-            resultParagraph.innerHTML += "Ação bem sucedida!";
+            resultParagraph.innerHTML += " Ação bem sucedida!";
         } else {
-            resultParagraph.innerHTML += "Ação falhou!";
+            resultParagraph.innerHTML += " Ação falhou!";
         }
     });
 
@@ -103,6 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+//-----------------------------------------------------ICONE DE ARRASTAR MAPA
 document.addEventListener('DOMContentLoaded', () => {
     const dragIcon = document.getElementById('drag-icon');
     let offsetX = 0;
@@ -132,8 +125,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+//-----------------------------------------------------MINIMIZAR CLASSES E CONTROLAR VIDAS
 document.addEventListener("DOMContentLoaded", () => {
     const toggleButtons = document.querySelectorAll(".toggle-visibility");
+
+    const pontosVida = document.querySelectorAll('.pontos-vida p');
+    
+    // Função para alternar entre os emojis
+    pontosVida.forEach(ponto => {
+        ponto.addEventListener('click', () => {
+            if (ponto.classList.contains('heart')) {
+                ponto.classList.remove('heart');
+                ponto.classList.add('skull');  // Troca para a classe "skull"
+                ponto.textContent = '💀';      // Altera para o emoji de caveira
+            } else {
+                ponto.classList.remove('skull');
+                ponto.classList.add('heart');  // Troca para a classe "heart"
+                ponto.textContent = '❤';      // Altera para o emoji de coração
+            }
+        });
+    });
 
     // Inicializa todos os jogadores no estado minimizado
     const jogadores = document.querySelectorAll(".jogador-char");
@@ -162,6 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+
+//-----------------------------------------------------SORTEIO DE MONSTROS
 document.addEventListener("DOMContentLoaded", () => {
     let rodada = 1; // Número da rodada
     const btnSortear = document.querySelector(".monstros-select .btn-monstro");
@@ -179,13 +195,13 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Iguana gigante",
             imagem: "./IMAGES/Monsters/monster-Iguana.jpg",
             desc:"Uma enorme e furiosa",
-            coracoes: 4
+            coracoes: 5
         },
         {
             nome: "3 Goblins saqueadores",
             imagem: "./IMAGES/Monsters/monster-Goblins.jpg",
-            desc:"Uma horda de 3 goblis, cada um com um ponto de vida",
-            coracoes: 3
+            desc:"Uma horda de 3 goblis, cada um com dois pontos de vida",
+            coracoes: 6
         },
         {
             nome: "Ciclope furioso",
@@ -208,8 +224,8 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             nome: "4 Esqueletos de piratas",
             imagem: "./IMAGES/prop-monster.png",
-            desc:"Uma horda de 4 esqueletos, cada um com um ponto de vida",
-            coracoes: 4
+            desc:"Uma horda de 5 esqueletos, cada um com um ponto de vida",
+            coracoes: 5
         },
         {
             nome: "Homem morcego selvagem",
@@ -227,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Sapo touro gigante",
             imagem: "./IMAGES/prop-monster.png",
             desc:"Super resistente e carnivoro",
-            coracoes: 7
+            coracoes: 6
         },
         {
             nome: "5 Espectros dos afogados",
@@ -269,10 +285,10 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Golem elemental",
             imagem: "./IMAGES/Monsters/monster-Golem.jpg",
             desc:"Guardião ancestral da arena",
-            coracoes: 5
+            coracoes: 7
         },
         {
-            nome: "Carangueijo colosso",
+            nome: "Caranguejo colosso",
             imagem: "./IMAGES/Monsters/monster-Caranguejo.jpg",
             desc:"Criatura ancestral tão velha quanto a ilha",
             coracoes: 6
@@ -281,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Urso tubarão",
             imagem: "./IMAGES/Monsters/monster-Ursotubarao.webp",
             desc:"A brutalidade das duas criaturas",
-            coracoes: 4
+            coracoes: 6
         },
         {
             nome: "Serpente do submundo",
@@ -344,6 +360,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+
+//-----------------------------------------------------CARTAS DO DESTINO
 document.addEventListener("DOMContentLoaded", () => {
     const btnEntregar = document.querySelector(".alteradores .btn-destino");
     const cartasDestinoViradas = document.querySelector(".cartas-destino-viradas");

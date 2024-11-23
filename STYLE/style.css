@@ -457,9 +457,14 @@ body{
 
 .monstro-resultado img {
     max-width: 400px; 
-    border: 2px solid #333;
+    border: 2px solid #1ac244;
     border-radius: 10px;
     margin: 10px 0;
+    box-shadow: 0px 0px 20px #1ac244;
+    transition: 0.2s;
+}
+.monstro-resultado img:hover {
+    box-shadow: 0px 0px 60px #1ac244;
 }
 
 .monstro-resultado p, .monstro-resultado h1 {
@@ -478,7 +483,8 @@ body{
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #16b13d;
+    color: white;
+    filter:drop-shadow(0px 0px 10px #1ac244);
     transition: transform 0.2s ease;
 }
 .vida:hover {
