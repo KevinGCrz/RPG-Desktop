@@ -18,7 +18,11 @@
             <div class="mapa-geral" style="position: relative;">
                 <img class="mapa-image" src="./IMAGES/Mapa TCC 01.jpg" alt="Mapa Geral">
 
-                <img class="icon-mapa" src="./IMAGES/propICON.png" alt="Ícone" id="drag-icon" style="position: absolute; top: 50px; left: 50px; cursor: grab;">
+                <img class="icon-mapa" src="./IMAGES/propICON.png" alt="Ícone" id="drag-icon" style="position: absolute; cursor: grab;">
+            </div>
+
+            <div class="cartas-destino-viradas">
+                <h1>Descubra qual será seu destino...</h1>
             </div>
     
         </div>
@@ -37,7 +41,7 @@
                         <div class="elementos">
                             <h1>Mestre das lâminas</h1>
                             <div class="name">
-                                <input type="text">  
+                                <input type="text" placeholder="Digite seu nome">  
                             </div>
                             <div class="status">
                                 <input class="statsbase forc" placeholder="16">
@@ -72,7 +76,7 @@
                         <div class="elementos">
                             <h1>Cozinheiro</h1>
                             <div class="name">
-                                <input type="text">  
+                                <input type="text" placeholder="Digite seu nome">  
                             </div>
                             <div class="status">
                                 <input class="statsbase forc" placeholder="10">
@@ -107,7 +111,7 @@
                         <div class="elementos">
                             <h1>Feiticeiro</h1>
                             <div class="name">
-                                <input type="text">  
+                                <input type="text" placeholder="Digite seu nome">  
                             </div>
                             <div class="status">
                                 <input class="statsbase forc" placeholder="7">
@@ -142,7 +146,7 @@
                         <div class="elementos">
                             <h1>Apostador</h1>
                             <div class="name">
-                                <input type="text">  
+                                <input type="text" placeholder="Digite seu nome">  
                             </div>
                             <div class="status">
                                 <input class="statsbase forc" placeholder="7">
@@ -177,7 +181,7 @@
                         <div class="elementos">
                             <h1>Bombardeiro</h1>
                             <div class="name">
-                                <input type="text">  
+                                <input type="text" placeholder="Digite seu nome">  
                             </div>
                             <div class="status">
                                 <input class="statsbase forc" placeholder="8">
@@ -212,7 +216,7 @@
                         <div class="elementos">
                             <h1>Mestre das feras</h1>
                             <div class="name">
-                                <input type="text">  
+                                <input type="text" placeholder="Digite seu nome">  
                             </div>
                             <div class="status">
                                 <input class="statsbase forc" placeholder="11">
@@ -247,7 +251,7 @@
                         <div class="elementos">
                             <h1>Druida</h1>
                             <div class="name">
-                                <input type="text">  
+                                <input type="text" placeholder="Digite seu nome">  
                             </div>
                             <div class="status">
                                 <input class="statsbase forc" placeholder="7">
@@ -282,7 +286,7 @@
                         <div class="elementos">
                             <h1>Viking</h1>
                             <div class="name">
-                                <input type="text">  
+                                <input type="text" placeholder="Digite seu nome">  
                             </div>
                             <div class="status">
                                 <input class="statsbase forc" placeholder="16">
@@ -332,14 +336,25 @@
 
             <!-------------------------------------------------------->
 
+            <div class="monstros-select">
+
+                <h1>Monstro da rodada</h1>
+                <img class="monstros-select-img" src="./IMAGES/prop-skull.png" alt="">
+
+                <button class="btn-monstro">Sortear o monstro</button>
+                <div class="monstro-resultado">
+                    <!-- Monstro sorteado será exibido aqui -->
+                </div>
+            </div> 
+            
             <div class="alteradores">
 
                 <h1>Cartas do destino ao jogo</h1>
                 <img src="./IMAGES/PropCarta.jpg" alt="">
 
-                <button class="btn-dado">ENTREGAR AO DESTINO</button>
+                <button class="btn-destino">ENTREGAR AO DESTINO</button>
 
-            </div>    
+            </div>   
     
         </div>
 
