@@ -467,9 +467,13 @@ body{
     box-shadow: 0px 0px 60px #1ac244;
 }
 
-.monstro-resultado p, .monstro-resultado h1 {
-    margin: 5px 0;
+.monstro-resultado h1{
     font-weight: bold;
+}
+.monstro-resultado p{
+    margin: 5px 50px 10px 50px;
+    font-style: italic;
+    font-size: 18px;
 }
 
 .vidas {

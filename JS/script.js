@@ -188,121 +188,121 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             nome: "Lobos Selvagens",
             imagem: "./IMAGES/Monsters/monster-Lobos.jpg",
-            desc:"Uma horda de 3 lobos, cada um com dois pontos de vida",
+            desc:"Uma horda de 3 lobos famintos por carne, cada um com dois pontos de vida",
             coracoes: 6
         },
         {
             nome: "Iguana gigante",
             imagem: "./IMAGES/Monsters/monster-Iguana.jpg",
-            desc:"Uma enorme e furiosa",
+            desc:"Uma enorme e majestosa criatura da ilha, cuidado que a aparência pacifica esconde sua fome por carne",
             coracoes: 5
         },
         {
             nome: "3 Goblins saqueadores",
             imagem: "./IMAGES/Monsters/monster-Goblins.jpg",
-            desc:"Uma horda de 3 goblis, cada um com dois pontos de vida",
+            desc:"Uma horda de 3 goblis saqueadores, cada um com dois pontos de vida",
             coracoes: 6
         },
         {
-            nome: "Ciclope furioso",
+            nome: "CRIAR NOVO",
             imagem: "./IMAGES/prop-monster.png",
-            desc:"Possesso e carregando um enorme tronco que usa de porrete",
+            desc:"VAZIO",
             coracoes: 5
         },
         {
             nome: "2 Hienas demoniacas",
             imagem: "./IMAGES/Monsters/monster-Hienas.jpg",
-            desc:"Uma horda de 2 hienas, cada um com três pontos de vida",
+            desc:"Uma horda de 2 hienas vindas de outro mundo, cada um com três pontos de vida",
             coracoes: 6
         },
         {
             nome: "Urso de guerra zumbi",
             imagem: "./IMAGES/Monsters/monster-UrsoZumbi.jpg",
-            desc:"Irrefreavel e morrendo de fome",
+            desc:"Irrefreavel e tomado por uma fome interminável",
             coracoes: 6
         },
         {
-            nome: "4 Esqueletos de piratas",
-            imagem: "./IMAGES/prop-monster.png",
-            desc:"Uma horda de 5 esqueletos, cada um com um ponto de vida",
+            nome: "5 Esqueletos de piratas",
+            imagem: "./IMAGES/Monsters/monster-Esqueletos.jpg",
+            desc:"Uma horda de 5 esqueletos daqueles que chegaram antes de vocês, cada um com um ponto de vida",
             coracoes: 5
         },
         {
             nome: "Homem morcego selvagem",
             imagem: "./IMAGES/Monsters/monster-HomemMorcego.jpg",
-            desc:"Cego mas com uma aldição absurda",
+            desc:"Vitima de uma terrivel maldição cego de ódio e sede de sangue",
             coracoes: 5
         },
         {
-            nome: "3 Nativos canibais",
-            imagem: "./IMAGES/prop-monster.png",
-            desc:"Uma horda de 3 canibais, cada um com dois pontos de vida",
+            nome: "Senhora dos afogados",
+            imagem: "./IMAGES/Monsters/monster-senhoraAfogados.jpg",
+            desc:"A maior lenda entre os piratas responsável por desaparecer com embarcações inteiras",
             coracoes: 6
         },
         {
             nome: "Sapo touro gigante",
-            imagem: "./IMAGES/prop-monster.png",
-            desc:"Super resistente e carnivoro",
+            imagem: "./IMAGES/Monsters/monster-SapoTouro.jpg",
+            desc:"Super resistente e com uma saliva ácida letal",
             coracoes: 6
         },
         {
             nome: "5 Espectros dos afogados",
-            imagem: "./IMAGES/prop-monster.png",
-            desc:"Uma horda de 5 fantasmas, cada um com um ponto de vida",
+            imagem: "./IMAGES/Monsters/monster-Afogados.jpg",
+            desc:"Uma horda de 5 fantasmas dos velhos arcanos da ilha, cada um com um ponto de vida",
             coracoes: 5
         },
         {
             nome: "Pantera de duas cabeças",
             imagem: "./IMAGES/Monsters/monster-PanteraTwoHead.webp",
-            desc:"Duplamente com fome",
+            desc:"Uma criatura majestosa encontrada exclusivamente nesta ilha, mas duplamente voraz",
             coracoes: 5
         },
         {
             nome: "3 Aranhas gigantes",
-            imagem: "./IMAGES/prop-monster.png",
-            desc:"Uma horda de 3 aranhas, cada um com dois pontos de vida",
+            imagem: "./IMAGES/Monsters/monster-Aranhas.jpg",
+            desc:"Uma horda de 3 aranhas do submundo, cada um com dois pontos de vida",
             coracoes: 6
         },
         {
             nome: "Berserker zumbi",
-            imagem: "./IMAGES/prop-monster.png",
+            imagem: "./IMAGES/Monsters/monster-Berserker.jpg",
             desc:"Movido pela raiva de todos que matou na guerra arcana",
             coracoes: 7
         },
         {
             nome: "Ratazana demoniaca",
-            imagem: "./IMAGES/prop-monster.png",
-            desc:"Voraz e frenética",
+            imagem: "./IMAGES/Monsters/monster-Rato.jpg",
+            desc:"Voraz e frenética famosa por triturar ossos",
             coracoes: 5
         },
         {
             nome: "Hidra de três cabeças",
-            imagem: "./IMAGES/prop-monster.png",
-            desc:"Uma criatura sinistra, cada cabeça com dois pontos de vida",
+            imagem: "./IMAGES/Monsters/monster-hydra.jpg",
+            desc:"Uma criatura sinistra vinda de outro mundo, cada cabeça com dois pontos de vida",
             coracoes: 6
         },
         {
             nome: "Golem elemental",
             imagem: "./IMAGES/Monsters/monster-Golem.jpg",
-            desc:"Guardião ancestral da arena",
+            desc:"Guardião ancestral da ilha, criado e abandonado pelos antigos feiticeiros arcanos",
             coracoes: 7
         },
         {
             nome: "Caranguejo colosso",
             imagem: "./IMAGES/Monsters/monster-Caranguejo.jpg",
-            desc:"Criatura ancestral tão velha quanto a ilha",
+            desc:"Criatura ancestral tão velha quanto a ilha mas famosa por afundar grandes barcos",
             coracoes: 6
         },
         {
             nome: "Urso tubarão",
             imagem: "./IMAGES/Monsters/monster-Ursotubarao.webp",
-            desc:"A brutalidade das duas criaturas",
+            desc:"A brutalidade das duas criaturas mais temiveis do mar e da terra",
             coracoes: 6
         },
         {
             nome: "Serpente do submundo",
-            imagem: "./IMAGES/prop-monster.png",
-            desc:"Diretamente de uma dimensão obscura e sombria",
+            imagem: "./IMAGES/Monsters/monster-serpente.jpg",
+            desc:"Mãe de todas serpentes do outro mundo é uma criatura temivel e lendária",
             coracoes: 7
         }
     ];
