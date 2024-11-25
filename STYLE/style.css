@@ -424,6 +424,41 @@ body{
     width: 60%;
 }
 
+.dado-space{
+    display: inline;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.dado-livre-view{
+    background-color: #1a4e27;
+    border-radius: 35px;
+    margin: 20px;
+    color: #16b13d;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.dado-livre-view h1{
+    width: 100%;
+    font-size: 25px;
+}
+.dado-livre-layout{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.result-dado-livre{
+    font-size: 45px;
+    font-weight: bold;
+    background-color: #174622;
+    border-radius: 100px;
+    margin: 5px 40%;
+    padding: 5% 5px;
+}
 
 /*------------------------------------------------------------------------*/
 

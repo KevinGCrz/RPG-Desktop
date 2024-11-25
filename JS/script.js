@@ -93,6 +93,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//-----------------------------------------------------D20 LIVRE 
+document.addEventListener("DOMContentLoaded", () => {
+    const btnDado = document.querySelector(".dado-livre-view .btn-dado");
+    const btnLimpar = document.querySelector(".dado-livre-view .btn-limpar");
+    const resultDisplay = document.querySelector(".dado-livre-view .result-dado-livre");
+
+    // Evento para rodar o dado
+    btnDado.addEventListener("click", () => {
+        const resultado = Math.floor(Math.random() * 20) + 1; // Gera um número entre 1 e 20
+        resultDisplay.textContent = resultado; // Exibe o resultado no parágrafo
+    });
+
+    // Evento para limpar o resultado
+    btnLimpar.addEventListener("click", () => {
+        resultDisplay.textContent = "?"; // Reseta o resultado para "?"
+    });
+});
 
 
 //-----------------------------------------------------ICONE DE ARRASTAR MAPA
