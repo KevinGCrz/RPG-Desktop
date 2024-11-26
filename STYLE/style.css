@@ -596,3 +596,598 @@ body{
     color: #29d655;
     box-shadow: 3px 3px 30px #29d655;
 }
+
+
+/*--------------------------------------------------------------------------TELA NOTEBOOK---*/
+@media screen and (max-width: 2100px) {
+
+    .layout-0{
+
+        max-width: 100%;
+        max-height: 95vh;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+    
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .grid-01{
+        background-color: #181a1f;
+        border-radius: 20px;
+        padding: 25px;
+    }
+
+    #drag-icon {
+        width: 50px; /* Ajuste o tamanho conforme necessário */
+        height: 50px;
+        cursor: grab; /* Mostra o cursor de "mão" ao passar pelo ícone */
+    }
+    .icon-mapa{
+        border: 2px solid #AA8400;
+    }
+
+    .mapa-image{
+        width: 65%;
+        border: 13px solid #195c70;
+        box-shadow: 3px 3px 30px black;
+        margin-bottom: 20px;
+    }
+
+    .grid-03 {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        width: 100%;
+        height: 100%;
+        max-height: 95vh;
+        overflow-y: scroll;
+        background-color: #181a1f;
+        border-radius: 20px;
+        padding: 10px;
+    }  
+
+    /*--------------------------------------------------*/
+
+    .jogador-char{
+        background-color: rgb(192, 169, 38);
+        padding: 20px;
+        margin: 15px;
+        border-radius: 35px;
+        box-shadow: 3px 3px 30px black;
+        text-align: end;
+    }
+    
+    .view-jogador{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 12px;
+    }
+    
+    .jogador-char img{
+        width: 40%;
+        filter:drop-shadow(0px 0px 10px rgb(112, 99, 21));
+    }
+    
+    .elementos h1{
+        margin-top: 0px;
+    }
+    
+    .name input{
+        width: 80%;
+        height: 35px;
+        border-radius: 15px;
+        border: none;
+        text-align: center;
+        background-color: rgb(153, 134, 29);
+        color: gold;
+        margin-bottom: 30px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .pontos-vida{
+        display: flex;
+        gap: 5px;
+        
+    }
+    
+    .pontos-vida p{
+        padding: 8px;
+        width: 15%;
+        border-radius: 100%;
+        font-size: 15px;
+    }
+    
+    .rodada-stats{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 3px;
+    }
+    .rodada-stats input{
+        width: 50%;
+        height: 35px;
+        border-radius: 15px;
+        border: none;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .statsbase{
+        width: 25px;
+        height: 25px;
+        padding-top: 5px;
+        font-size: 25px;
+    }
+    
+    .status{
+        gap:10px;
+    }
+    
+    .status input{
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+    }
+
+    /* Estilo quando minimizado */
+    .jogador-char.minimized {
+        padding: 0px; /* Espaçamento interno */
+    }
+    .jogador-char .toggle-visibility {
+        padding: 5px;
+    }
+    .jogador-char.minimized .toggle-visibility {
+        display: block; /* Garante que o botão fique visível */
+        padding: 3px 40px;
+        width: 80%;
+        margin: 10px;
+    }
+
+    /*--------------------------------------------------*/
+
+    .acoes-jogadores {
+        margin: 5px;
+    }
+
+    .btn-dado{
+        width: 80%;
+        padding: 8px;
+        font-size: 20px;
+        margin: 20px 0px;
+    }
+    .btn-limpar{
+        width: 80%;
+        padding: 5px;
+        font-size: 15px;
+        margin: 20px 0px;
+    }
+
+    /*--------------------------------------------------*/
+
+    .dado-livre-view {
+        background-color: #1a4e27;
+        border-radius: 35px;
+        margin: 5px;
+        color: #16b13d;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .dado-livre-view h1{
+        width: 100%;
+        font-size: 25px;
+    }
+    .dado-livre-layout{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .result-dado-livre{
+        font-size: 35px;
+        font-weight: bold;
+        background-color: #174622;
+        border-radius: 100px;
+        margin: 5px 35%;
+        padding: 5% 5%;
+    }
+
+    /*--------------------------------------------------*/
+
+    .monstros-select{
+        margin: 5px;
+    }
+    .monstros-select-img{
+        width: 150px;
+    }
+    
+    .monstro-resultado img {
+        max-width: 80%; 
+        margin: 10px 0px;
+    }
+    
+    .monstro-resultado h1{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .monstro-resultado p{
+        margin: 5px 50px 10px 50px;
+        font-style: italic;
+        font-size: 15px;
+    }
+    
+    .vidas {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin: 15px 0px 25px 0px;
+    }
+    
+    .btn-monstro{
+        width: 80%;
+        padding: 10px;
+        font-size: 20px;
+        margin: 5px 0px;
+    }
+
+    /*--------------------------------------------------*/
+
+    .alteradores {
+        margin: 5px;
+    }
+    .alteradores h1{
+       font-size: 25px;
+       width: 80%;
+       margin-bottom: 25px;
+    }
+
+    .alteradores img{
+        width: 50%;
+        margin-bottom: 35px;
+        box-shadow: 0px 0px 20px #1ac244;
+        transition: 1.1s;
+    }
+    
+    .btn-destino{
+        width: 80%;
+        font-size: 15px;
+        padding: 8px;
+        margin-bottom: 30px;
+    }
+
+    /*--------------------------------------------------*/
+
+    .cartas-destino-viradas{
+        width: 95%;
+        height: 100px;
+        padding-top: 5px;
+    }
+    .cartas-destino-viradas h1{
+        margin: 0px;
+        padding: 20px;
+        font-size: 25px;
+        }
+        
+    .cartas-destino-viradas img{
+        height: 75px;
+        box-shadow: 0px 0px 10px #06290e;
+        transition: 0.5s;
+    }
+    .cartas-destino-viradas img:hover{
+        transform: scale(5.2) translateY(-40%);
+        box-shadow: 0px 0px 40px #1AC244;
+        border-radius: 3px;
+    }
+    
+}
+
+
+
+/*--------------------------------------------------------------------------MOBILE---*/
+@media screen and (max-width: 500px) {
+
+    .layout-0{
+
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+    
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+    }
+    
+    .grid-01{
+        background-color: #181a1f;
+        border-radius: 20px;
+        padding: 25px;
+        max-height: 30vh;
+        overflow-y: auto;
+    }
+    
+    .mapa-image{
+        width: 75%;
+        border: 5px solid #195c70;
+        box-shadow: 3px 3px 30px black;
+        margin-bottom: 15px;
+        border-radius: 15px;
+    }
+    .icon-mapa{
+        display: none;
+    }
+
+    .grid-02{
+        max-height: 30vh;
+        margin-bottom: 20px;
+    }
+
+    .grid-03 {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        width: 100%;
+        height: 100%;
+        max-height: 95vh;
+        overflow-y: scroll;
+        background-color: #181a1f;
+        border-radius: 20px;
+        padding: 10px;
+    }  
+
+    /*--------------------------------------------------*/
+
+    .jogador-char{
+        background-color: rgb(192, 169, 38);
+        padding: 20px;
+        margin: 15px;
+        border-radius: 35px;
+        box-shadow: 3px 3px 30px black;
+        text-align: end;
+    }
+    
+    .view-jogador{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 12px;
+    }
+    
+    .jogador-char img{
+        width: 20%;
+        margin-top: -30px;
+        filter:drop-shadow(0px 0px 10px rgb(112, 99, 21));
+    }
+    
+    .elementos h1{
+        margin-top: 10px;
+    }
+    
+    .name input{
+        width: 80%;
+        height: 35px;
+        border-radius: 15px;
+        border: none;
+        text-align: center;
+        background-color: rgb(153, 134, 29);
+        color: gold;
+        margin-bottom: 30px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .pontos-vida{
+        display: flex;
+        gap: 5px;
+        
+    }
+    
+    .pontos-vida p{
+        padding: 8px;
+        width: 15%;
+        border-radius: 100%;
+        font-size: 15px;
+    }
+    
+    .rodada-stats{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 3px;
+    }
+    .rodada-stats input{
+        width: 50%;
+        height: 35px;
+        border-radius: 15px;
+        border: none;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .statsbase{
+        width: 25px;
+        height: 25px;
+        padding-top: 5px;
+        font-size: 25px;
+    }
+    
+    .status{
+        gap:10px;
+    }
+    
+    .status input{
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+    }
+
+    /* Estilo quando minimizado */
+    .jogador-char.minimized {
+        padding: 0px; /* Espaçamento interno */
+    }
+    .jogador-char .toggle-visibility {
+        padding: 5px;
+    }
+    .jogador-char.minimized .toggle-visibility {
+        display: block; /* Garante que o botão fique visível */
+        padding: 3px 40px;
+        width: 80%;
+        margin: 10px;
+    }
+
+    .regras p{
+        font-size: 18px;
+    }
+
+    /*--------------------------------------------------*/
+
+    .acoes-jogadores {
+        margin: 5px;
+    }
+
+    .btn-dado{
+        width: 80%;
+        padding: 8px;
+        font-size: 20px;
+        margin: 20px 0px;
+    }
+    .btn-limpar{
+        width: 80%;
+        padding: 5px;
+        font-size: 15px;
+        margin: 20px 0px;
+    }
+
+    /*--------------------------------------------------*/
+
+    .dado-livre-view {
+        background-color: #1a4e27;
+        border-radius: 35px;
+        margin: 5px;
+        color: #16b13d;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .dado-livre-view h1{
+        width: 100%;
+        font-size: 25px;
+    }
+    .dado-livre-layout{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .result-dado-livre{
+        font-size: 35px;
+        font-weight: bold;
+        background-color: #174622;
+        border-radius: 100px;
+        margin: 5px 35%;
+        padding: 5% 5%;
+    }
+
+    /*--------------------------------------------------*/
+
+    .monstros-select{
+        margin: 5px;
+    }
+    .monstros-select-img{
+        width: 150px;
+    }
+    
+    .monstro-resultado img {
+        max-width: 80%; 
+        margin: 10px 0px;
+    }
+    
+    .monstro-resultado h1{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .monstro-resultado p{
+        margin: 5px 50px 10px 50px;
+        font-style: italic;
+        font-size: 15px;
+    }
+    
+    .vidas {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin: 15px 0px 25px 0px;
+    }
+    
+    .btn-monstro{
+        width: 80%;
+        padding: 10px;
+        font-size: 20px;
+        margin: 5px 0px;
+    }
+
+    /*--------------------------------------------------*/
+
+    .alteradores {
+        margin: 5px;
+    }
+    .alteradores h1{
+       font-size: 25px;
+       width: 80%;
+       margin-bottom: 25px;
+    }
+
+    .alteradores img{
+        width: 50%;
+        margin-bottom: 35px;
+        box-shadow: 0px 0px 20px #1ac244;
+        transition: 1.1s;
+    }
+    .alteradores img:hover{
+        transform: scale(1);
+    }
+    
+    .btn-destino{
+        width: 80%;
+        font-size: 15px;
+        padding: 8px;
+        margin-bottom: 30px;
+    }
+
+    /*--------------------------------------------------*/
+
+    .cartas-destino-viradas{
+        width: 95%;
+        height: 160px;
+        padding-top: 5px;
+    }
+    .cartas-destino-viradas h1{
+        margin: 0px;
+        padding: 36px;
+        font-size: 25px;
+        }
+        
+    .cartas-destino-viradas img{
+        height: 65px;
+        box-shadow: 0px 0px 10px #06290e;
+        transition: 0.5s;
+    }
+
+    .cartas-destino-viradas img:hover{
+        transform: scale(8.2) translateY(0%);
+        box-shadow: 0px 0px 40px #1AC244;
+        border-radius: 3px;
+    }
+
+}
