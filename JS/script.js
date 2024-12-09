@@ -70,19 +70,48 @@ document.addEventListener('DOMContentLoaded', () => {
         const statusValue = parseInt(statsButtons[selectedStatus].textContent, 10) || 0;
         const total = randomRoll + statusValue;
 
+        let resultadoExtra = "";
+
         // Atualiza o número do dado na interface
         diceNumberDisplay.textContent = `${randomRoll}`;
         
-        // Exibe o resultado
+        // Exibe o resultado inicial
         resultParagraph.innerHTML = `
             Número sorteado: ${randomRoll}, Soma: ${total}. 
         `;
-        if (total >= 25) {
+        if (total >= 20) {
             resultParagraph.innerHTML += " Ação bem sucedida!";
+            resultadoExtra = " Ação bem sucedida!";
         } else {
             resultParagraph.innerHTML += " Ação falhou!";
+            resultadoExtra = " Ação falhou!";
         }
+
+                // Aplica as mensagens adicionais baseadas no resultado e adiciona classes
+            let extraMessage = "";
+            if (resultadoExtra == " Ação bem sucedida!" && randomRoll == 20) {
+                extraMessage = "Você atingiu o critico, jogue outra vez!";
+                resultParagraph.classList.add("result-dado-acertoCritico");
+
+            } else if (resultadoExtra == " Ação bem sucedida!" && randomRoll < 20) {
+                extraMessage = "Você acertou!";
+                resultParagraph.classList.add("result-dado-acerto");
+
+            } else if (resultadoExtra == " Ação falhou!" && randomRoll >= 6) {
+                extraMessage = "Você falhou na sua ação.";
+                resultParagraph.classList.add("result-dado-falha");
+
+            } else if (resultadoExtra == " Ação falhou!" && randomRoll <= 5) {
+                extraMessage = "-1 ponto de vida.";
+                resultParagraph.classList.add("result-dado-falhaCritica");
+            }
+
+            // Adiciona a mensagem extra abaixo do resultado
+            if (extraMessage) {
+                resultParagraph.innerHTML += `<br>${extraMessage}`;
+            }
     });
+
 
     // Lógica para limpar os resultados
     clearButton.addEventListener('click', () => {
@@ -92,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedStatus = null;
     });
 });
+
+
 
 //-----------------------------------------------------D20 LIVRE 
 document.addEventListener("DOMContentLoaded", () => {
@@ -110,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resultDisplay.textContent = "?"; // Reseta o resultado para "?"
     });
 });
+
 
 
 //-----------------------------------------------------ICONE DE ARRASTAR MAPA
