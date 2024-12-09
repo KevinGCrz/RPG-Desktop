@@ -7,12 +7,13 @@
 }
 
 body{
-    background-color: rgb(35, 37, 44);
+    background-color: #181A1F;
 }
 
 .layout-0{
 
     max-width: 100%;
+    max-height: 95vh;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
 
@@ -22,7 +23,8 @@ body{
 }
 
 .grid-01{
-    background-color: #181a1f;
+    background-image: url(/IMAGES/fundo-grid1.png);
+    background-size: cover;
     border-radius: 20px;
     padding: 25px;
 }
@@ -50,21 +52,21 @@ body{
 }
 
 .toggle-visibility {
-    background-color: #19702F;
-    color: #1AC244;
+    background-color: #5E473E;
+    color: rgb(255, 239, 97);
     font-weight: bold;
     border: none;
     border-radius: 10px;
     padding: 5px 10px;
     cursor: pointer;
-    box-shadow: 0px 0px 10px #1AC244;
+    box-shadow: 0px 0px 20px black;
     width: 30%;
     margin-bottom: 10px;
 }
 
 .toggle-visibility:hover {
-    background-color: #1AC244;
-    color: #19702F;
+    background-color: #94695a;
+    color: rgb(255, 239, 97);
 }
 
 .cartas-destino-viradas{
@@ -97,34 +99,42 @@ body{
 
 .grid-02{
     width: 100%;
-    max-height: 95vh;
+    max-height: 100vh;
     overflow-y: scroll;
     margin: 0px 0px;
+    padding: 60px 0px;
+    background-image: url(/IMAGES/layout-grid2.png);
+    background-size: cover;
 }
 .grid-02::-webkit-scrollbar {
     width: 10px; /* Largura da barra */
   }
   
   .grid-02::-webkit-scrollbar-thumb {
-    background-color: #888; /* Cor do "polegar" */
+    background-color: #5E473E; /* Cor do "polegar" */
     border-radius: 50px; /* Arredondamento */
   }
   
   .grid-02::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Cor ao passar o mouse */
+    background-color: #70564b; /* Cor ao passar o mouse */
   }
   
   .grid-02::-webkit-scrollbar-track {
-    background: #3c4258; /* Cor do trilho */
+    background: #1f1612; /* Cor do trilho */
   }
 
 .jogador-char{
-    background-color: rgb(192, 169, 38);
+    background-image: url(/IMAGES/layout-player.png);
+    background-size:cover;
     padding: 20px;
     margin: 15px;
-    border-radius: 35px;
-    box-shadow: 3px 3px 30px black;
+    filter:drop-shadow(3px 3px 10px black);
     text-align: end;
+    color: wheat;
+    border-radius: 10px;
+}
+.jogador-char h1{
+    text-shadow: 3px 3px 10px black;
 }
 .jogador-char {
     transition: all 0.3s ease; /* Suaviza a transição */
@@ -133,10 +143,10 @@ body{
 /* Estilo quando minimizado */
 .jogador-char.minimized {
     background-color: #1f7a36; /* Cor de fundo ao minimizar */
-    padding: 5px; /* Espaçamento interno */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .jogador-char.minimized .view-jogador {
@@ -156,6 +166,11 @@ body{
 
 .jogador-char.minimized .toggle-visibility {
     display: block; /* Garante que o botão fique visível */
+    padding: 5px 40px;
+    margin: 0px;
+    border-radius: 15px;
+    width: 80%;
+    font-size: 18px;
 }
 
 .view-jogador{
@@ -168,7 +183,7 @@ body{
 
 .jogador-char img{
     width: 100%;
-    filter:drop-shadow(0px 0px 10px rgb(112, 99, 21));
+    filter:drop-shadow(0px 0px 10px yellow);
 }
 
 .elementos h1{
@@ -181,7 +196,8 @@ body{
     border-radius: 15px;
     border: none;
     text-align: center;
-    background-color: rgb(153, 134, 29);
+    background-color: #BC885B;
+    box-shadow: 0px 0px 10px black;
     color: gold;
     margin-bottom: 30px;
     font-weight: bold;
@@ -195,8 +211,8 @@ body{
 }
 
 .pontos-vida p{
-    background-color: rgb(218, 192, 45);
-    box-shadow: 0px 0px 20px rgb(124, 124, 29);
+    background-color: #e49f62;
+    box-shadow: 0px 0px 10px black;
     color: white;
     padding: 10px;
     border-radius: 100%;
@@ -225,10 +241,11 @@ body{
     border-radius: 15px;
     border: none;
     text-align: center;
-    background-color: rgb(153, 134, 29);
+    background-color: #83553B;
+    box-shadow: 0px 0px 10px black;
     color: gold;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
 }
 .rodada-stats input::placeholder {
     color: rgb(73, 69, 44);
@@ -240,7 +257,8 @@ body{
     border-radius: 15px;
     border: none;
     text-align: center;
-    background-color: #6b5d0a;
+    background-color: #3F2D24;
+    box-shadow: 0px 0px 10px black;
     color: gold;
     cursor: pointer;
     font-weight: bold;
@@ -249,7 +267,7 @@ body{
 }
 .rodada-stats button:hover{
     background-color: gold;
-    color: #6b5d0a;
+    color: #3F2D24;
 }
 
 .statsbase{
@@ -292,11 +310,11 @@ body{
 .agil{
     color: yellow;
     background-color: rgb(197, 197, 68);
-    box-shadow: 0px 0px 20px rgb(124, 124, 29);
+    box-shadow: 0px 0px 20px yellow;
     transition: 0.5s;
 }
 .agil:hover{
-    box-shadow: 0px 0px 60px rgb(124, 124, 29);
+    box-shadow: 0px 0px 60px yellow;
 }
 .perc{
     color: blue;
@@ -315,7 +333,7 @@ body{
     grid-template-rows: 1fr 1fr;
     width: 100%;
     height: 100%;
-    max-height: 98vh;
+    max-height: 95vh;
     overflow-y: scroll;
     
     background-color: #181a1f;
@@ -521,6 +539,7 @@ body{
     background: none;
     border: none;
     font-size: 24px;
+    margin-bottom: 10px;
     cursor: pointer;
     color: white;
     filter:drop-shadow(0px 0px 10px #1ac244);
@@ -599,25 +618,10 @@ body{
 
 
 /*--------------------------------------------------------------------------TELA NOTEBOOK---*/
+
 @media screen and (max-width: 2100px) {
 
-    .layout-0{
 
-        max-width: 100%;
-        max-height: 95vh;
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-    
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .grid-01{
-        background-color: #181a1f;
-        border-radius: 20px;
-        padding: 25px;
-    }
 
     #drag-icon {
         width: 50px; /* Ajuste o tamanho conforme necessário */
@@ -635,28 +639,8 @@ body{
         margin-bottom: 20px;
     }
 
-    .grid-03 {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        width: 100%;
-        height: 100%;
-        max-height: 95vh;
-        overflow-y: scroll;
-        background-color: #181a1f;
-        border-radius: 20px;
-        padding: 10px;
-    }  
 
     /*--------------------------------------------------*/
-
-    .jogador-char{
-        background-color: rgb(192, 169, 38);
-        padding: 20px;
-        margin: 15px;
-        border-radius: 35px;
-        box-shadow: 3px 3px 30px black;
-        text-align: end;
-    }
     
     .view-jogador{
         display: flex;
@@ -673,23 +657,6 @@ body{
         filter:drop-shadow(0px 0px 10px rgb(112, 99, 21));
     }
     
-    .elementos h1{
-        margin-top: 0px;
-    }
-    
-    .name input{
-        width: 80%;
-        height: 35px;
-        border-radius: 15px;
-        border: none;
-        text-align: center;
-        background-color: rgb(153, 134, 29);
-        color: gold;
-        margin-bottom: 30px;
-        font-weight: bold;
-        font-size: 18px;
-    }
-    
     .pontos-vida{
         display: flex;
         gap: 5px;
@@ -704,19 +671,7 @@ body{
     }
     
     .rodada-stats{
-        display: flex;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
         gap: 3px;
-    }
-    .rodada-stats input{
-        width: 50%;
-        height: 35px;
-        border-radius: 15px;
-        border: none;
-        text-align: center;
-        font-size: 14px;
     }
     
     .statsbase{
