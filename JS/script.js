@@ -416,7 +416,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnEntregar = document.querySelector(".alteradores .btn-destino");
     const cartasDestinoViradas = document.querySelector(".cartas-destino-viradas");
     const alteradores = document.querySelector(".alteradores");
-
+    const btnTurnos = document.querySelectorAll(".rodada-stats button"); // Todos os botões "Meu turno"
+    const ovo = document.querySelector(".evento-destino.ovo"); // Seleciona o ovo
+    const ovoChocado = document.querySelector(".ovo-chocado"); // Elemento ovo-chocado
+    const destruirOvoBtn = document.querySelector(".evento-destino .evento-opcoes button"); // Botão "Destruir ovo"
+    
     // Lista de cartas disponíveis
     const cartas = [
         "./IMAGES/CartasDestino/CartasDestino-1.png",
@@ -444,13 +448,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     // Limite de cartas viradas
-    const maxCartas = 9;
+    const maxCartas = 8;
     let cartasViradas = 0;
 
     btnEntregar.addEventListener("click", () => {
         // Verifica se atingiu o limite de cartas
         if (cartasViradas >= maxCartas) {
-            alert("Você já entregou todas as cartas ao destino!");
+            alert("Remova uma carta do banco para poder puxar uma nova carta do destino!");
             return;
         }
 
@@ -479,11 +483,51 @@ document.addEventListener("DOMContentLoaded", () => {
             <button class="btn-destino">ENTREGAR AO DESTINO</button>
         `;
 
+        // Verifica se a carta sorteada é a CartasDestino-21
+        if (cartaSorteada === "./IMAGES/CartasDestino/CartasDestino-21.png") {
+            // Altera o estilo para "flex"
+            if (ovo) {
+                ovo.style.display = "flex";
+
+                // Cria o input dentro da classe ovo, caso ainda não exista
+                if (!ovo.querySelector("input")) {
+                    const input = document.createElement("input");
+                    input.type = "number";
+                    input.value = 1; // Inicia o valor como 1
+                    input.id = "input-ovo"; // Atribui um ID ao input
+                    ovo.appendChild(input); // Adiciona o input ao ovo
+                } else {
+                    // Caso o input já exista, garantimos que ele tenha o valor inicial de 1
+                    const input = ovo.querySelector("input");
+                    if (input.value === "" || input.value === "NaN") {
+                        input.value = 1; // Garantir que o valor inicie como 1
+                    }
+                }
+            }
+        }
+
         // Adiciona a carta ao layout "cartas-destino-viradas"
-        const cartaElement = document.createElement("img");
-        cartaElement.src = cartaSorteada;
-        cartaElement.alt = "Carta do destino";
-        cartaElement.style.margin = "5px"; // Ajuste de espaçamento
+        const cartaElement = document.createElement("div");
+        cartaElement.classList.add("carta-container");
+
+        const cartaImg = document.createElement("img");
+        cartaImg.src = cartaSorteada;
+        cartaImg.alt = "Carta do destino";
+        cartaImg.style.margin = "5px"; // Ajuste de espaçamento
+        
+        const btnRemover = document.createElement("button");
+        btnRemover.textContent = "Remover";
+        btnRemover.classList.add("btn-remover");
+
+        btnRemover.addEventListener("click", () => {
+            cartaElement.remove(); // Remove a carta e o botão
+            cartasViradas--; // Diminui o contador de cartas viradas
+        });
+
+        cartaElement.appendChild(cartaImg);
+        cartaElement.appendChild(btnRemover);
+
+        // Agora a carta será adicionada diretamente dentro de "cartas-destino-viradas"
         cartasDestinoViradas.appendChild(cartaElement);
 
         // Incrementa o número de cartas viradas
@@ -493,8 +537,67 @@ document.addEventListener("DOMContentLoaded", () => {
         const btnNovo = alteradores.querySelector(".btn-destino");
         btnNovo.addEventListener("click", () => btnEntregar.click());
     });
+
+    // Evento para incrementar o valor do input dentro de "ovo" quando qualquer botão "Meu turno" for pressionado
+    btnTurnos.forEach(btnTurno => {
+        btnTurno.addEventListener("click", () => {
+            const inputOvo = ovo ? ovo.querySelector("input") : null;
+            if (inputOvo) {
+                // Garantir que o valor do input é um número válido
+                let currentValue = parseInt(inputOvo.value);
+                if (!isNaN(currentValue)) {
+                    inputOvo.value = currentValue + 1; // Incrementa o valor do input
+
+                    // Verifica se o valor do input atingiu 100
+                    if (currentValue + 1 === 100) {
+                        // Altera o display de ovo e ovo-chocado
+                        if (ovo) {
+                            ovo.style.display = "none"; // Esconde o ovo
+                        }
+                        if (ovoChocado) {
+                            ovoChocado.style.display = "flex"; // Mostra o ovo-chocado
+                            ovoChocado.style.flexDirection = "column"; // Alinha em coluna
+                        }
+                    }
+                }
+            }
+        });
+    });
+
+    // Evento para destruir o ovo
+    if (destruirOvoBtn) {
+        destruirOvoBtn.addEventListener("click", () => {
+            if (ovo) {
+                ovo.style.display = "none"; // Esconde a classe ovo ao clicar no botão "Destruir ovo"
+            }
+        });
+    }
 });
 
+
+//-----------------------------------------------------OVO ATIVADO
+document.addEventListener("DOMContentLoaded", () => {
+    // Seleciona todos os elementos <p> dentro de .vida-dragao que contêm o emoji
+    const coracoes = document.querySelectorAll(".evento-destino .vida-dragao p");
+
+    // Adiciona o evento de clique em cada elemento <p>
+    coracoes.forEach(coracao => {
+        coracao.addEventListener("click", () => {
+            // Verifica se o conteúdo atual é o emoji de coração ❤
+            if (coracao.textContent === "❤") {
+                // Troca para o emoji de caveira 💀
+                coracao.textContent = "💀";
+                coracao.classList.remove("heart"); // Remove a classe "heart"
+                coracao.classList.add("skull"); // Adiciona a classe "skull"
+            } else {
+                // Caso contrário, troca para o emoji de coração ❤
+                coracao.textContent = "❤";
+                coracao.classList.remove("skull"); // Remove a classe "skull"
+                coracao.classList.add("heart"); // Adiciona a classe "heart"
+            }
+        });
+    });
+});
 
 
 
