@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultParagraph.innerHTML = `
             Número sorteado: ${randomRoll}, Soma: ${total}. 
         `;
-        if (total >= 20) {
+        if (total >= 25) {
             resultParagraph.innerHTML += " Ação bem sucedida!";
             resultadoExtra = " Ação bem sucedida!";
         } else {
@@ -89,6 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Aplica as mensagens adicionais baseadas no resultado e adiciona classes
             let extraMessage = "";
+            resultParagraph.classList.remove("result-dado-acertoCritico", "result-dado-acerto", "result-dado-falha", "result-dado-falhaCritica");
+
             if (resultadoExtra == " Ação bem sucedida!" && randomRoll == 20) {
                 extraMessage = "Você atingiu o critico, jogue outra vez!";
                 resultParagraph.classList.add("result-dado-acertoCritico");

@@ -1,5 +1,6 @@
 *{
     padding: 0;
+    margin: 0;
     top: 0;
     left: 0;
     box-sizing: border-box;
@@ -20,6 +21,8 @@ body{
     text-align: center;
     align-items: center;
     justify-content: center;
+
+    background-image: url(/IMAGES/fundo-pagina.png);
 }
 
 .grid-01{
@@ -28,10 +31,11 @@ body{
     border-radius: 20px;
     padding: 25px;
     margin: 0px 10px;
+    height: 95vh;
 }
 
 .mapa-image{
-    width: 85%;
+    width: 80%;
     border: 13px solid #195c70;
     box-shadow: 3px 3px 30px black;
     margin-bottom: 40px;
@@ -43,8 +47,8 @@ body{
 }
 
 #drag-icon {
-    width: 80px; /* Ajuste o tamanho conforme necessário */
-    height: 80px;
+    width: 90px; /* Ajuste o tamanho conforme necessário */
+    height: 90px;
     cursor: grab; /* Mostra o cursor de "mão" ao passar pelo ícone */
 }
 
@@ -70,7 +74,7 @@ body{
 .cartas-destino-viradas{
     width: 95%;
     margin: 0 auto;
-    height: 160px;
+    height: 180px;
     background-image: url(/IMAGES/fundo-carrosel-cartas.png);
     background-position: center;
     
@@ -137,9 +141,7 @@ body{
     max-height: 100vh;
     overflow-y: scroll;
     margin: 0px 0px;
-    padding: 60px 0px;
-    background-image: url(/IMAGES/layout-grid2.png);
-    background-size: cover;
+    padding: 0px 0px;
     z-index: 1;
 }
 .grid-02::-webkit-scrollbar {
@@ -159,6 +161,7 @@ body{
     background: #1f1612; /* Cor do trilho */
   }
 
+  
 .jogador-char{
     background-image: url(/IMAGES/layout-player.png);
     background-size:cover;
@@ -238,7 +241,7 @@ body{
     background-color: #BC885B;
     box-shadow: 0px 0px 10px black;
     color: gold;
-    margin-bottom: 30px;
+    margin: 30px 0px;
     font-weight: bold;
     font-size: 18px;
 }
@@ -247,6 +250,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
+    margin: 15px 0px;
 }
 
 .pontos-vida p{
@@ -418,7 +422,7 @@ body{
     justify-content: center;
     align-items: center;
 
-    padding: 30px 0px;
+    padding: 90px 0px;
 }
 .acoes-jogadores h1{
     width: 70%;
@@ -546,6 +550,7 @@ body{
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding: 30px 0px;
 }
 .monstros-select-img{
     width: 200px;
@@ -647,12 +652,14 @@ body{
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding: 30px 0px;
 }
 .alteradores img{
     width: 40%;
     margin-bottom: 35px;
     box-shadow: 0px 0px 20px #E7C700;
     transition: 0.5s;
+    margin-top: 30px;
 }
 .alteradores img:hover{
     transform: scale(1.4);
@@ -694,7 +701,7 @@ body{
     margin: 20px;
     color: #4cdd70;
     text-shadow: 0px 0px 30px #0cff49;
-    box-shadow: 0px 0px 30px #175A32;
+    box-shadow: 0px 0px 30px #00f7ff;
     
     display: flex;
 
@@ -765,9 +772,13 @@ body{
     display: none;
     color: #97f7af;
 }
+.ovo-chocado h1{
+    margin-top: 30px;
+}
 .ovo-chocado img{
     width: 70%;
-    box-shadow: 0px 0px 30px #97f7af;
+    box-shadow: 0px 0px 30px #19CCD3;
+    margin: 40px 0px;
 }
 .ovo-chocado p{
     width: 80%;
@@ -787,6 +798,7 @@ body{
     font-size: 40px;
     text-shadow: 0px 0px 30px #97f7af;
     color: #97f7af;
+    margin: 30px 0px;
 }
 .vida-dragao p:hover{
     transform: scale(1.5);
@@ -795,9 +807,42 @@ body{
     text-shadow: 0px 0px 30px red;
 }
 
+/*----------------*/
+
+.result-dado-acertoCritico{
+    color: #0cff49;
+    text-shadow: 0px 0px 20px rgb(22, 255, 72);
+}
+
+.result-dado-acerto{
+    color: #0cff49;
+    text-shadow: 0px 0px 20px black;
+}
+
+.result-dado-falha{
+    color: #FFE800;
+    text-shadow: 0px 0px 20px black;
+}
+
+.result-dado-falhaCritica{
+    color: rgb(255, 88, 88);
+    text-shadow: 0px 0px 20px black;
+}
 
 
+/*------------------------------FOOTER-------------------------------*/
 
+footer{
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+footer p{
+    padding: 20px;
+    color: white;
+}
 
 
 /*--------------------------------------------------------------------------TELA NOTEBOOK---*/
