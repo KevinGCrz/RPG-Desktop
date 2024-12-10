@@ -13,7 +13,7 @@ body{
 .layout-0{
 
     max-width: 100%;
-    max-height: 95vh;
+    max-height: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
 
@@ -27,6 +27,7 @@ body{
     background-size: cover;
     border-radius: 20px;
     padding: 25px;
+    margin: 0px 10px;
 }
 
 .mapa-image{
@@ -52,21 +53,16 @@ body{
 }
 
 .toggle-visibility {
-    background-color: #5E473E;
+    background-image: url(/IMAGES/layout-player2.png);
     color: rgb(255, 239, 97);
     font-weight: bold;
     border: none;
     border-radius: 10px;
     padding: 5px 10px;
     cursor: pointer;
-    box-shadow: 0px 0px 20px black;
+    box-shadow: 0px 0px 30px black;
     width: 30%;
     margin-bottom: 10px;
-}
-
-.toggle-visibility:hover {
-    background-color: #94695a;
-    color: rgb(255, 239, 97);
 }
 
 /*----------------CARTAS DESTINO*/
@@ -75,9 +71,11 @@ body{
     width: 95%;
     margin: 0 auto;
     height: 160px;
-    background-color: #19702f;
+    background-image: url(/IMAGES/fundo-carrosel-cartas.png);
+    background-position: center;
+    
     border-radius: 25px;
-    box-shadow: 0px 0px 10px #1AC244;
+    box-shadow: 0px 0px 10px #008156;
 
     display: flex;
     text-align: center;
@@ -206,9 +204,12 @@ body{
     display: block; /* Garante que o botão fique visível */
     padding: 5px 40px;
     margin: 0px;
-    border-radius: 15px;
     width: 80%;
     font-size: 18px;
+    transition: 0.3s;
+}
+.jogador-char.minimized .toggle-visibility:hover{
+    transform: scale(1.1);
 }
 
 .view-jogador{
@@ -374,7 +375,10 @@ body{
     max-height: 95vh;
     overflow-y: scroll;
     
-    background-color: #0f2c16;
+    background-image: url(/IMAGES/layout-grid4.png);
+    background-size: cover;
+    background-position: center;
+
     border-radius: 20px;
     padding: 10px;
 }
@@ -398,10 +402,14 @@ body{
 /*------------------------------------------------------------------------*/
 
 .acoes-jogadores{
-    background-color: #1a4e27;
-    border-radius: 35px;
+    background-image: url(/IMAGES/fundo-grid-acoes.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
     margin: 20px;
-    color: #16b13d;
+    color: #97f7af;
+    text-shadow: 0px 0px 30px black;
+    box-shadow: 0px 0px 30px #008156;
     
     display: flex;
     flex-direction: column;
@@ -409,6 +417,8 @@ body{
     text-align: center;
     justify-content: center;
     align-items: center;
+
+    padding: 30px 0px;
 }
 .acoes-jogadores h1{
     width: 70%;
@@ -416,46 +426,48 @@ body{
 }
 
 .btn-dado{
-    width: 60%;
+    background-image:linear-gradient(#008156, #225e31);
+    border: none;
+    border-radius: 15px;
+    color: #97f7af;
+    box-shadow: 0px 0px 30px black;
+
+    width: 80%;
     padding: 8px;
+
     font-size: 25px;
     font-weight: bold;
     font-style: italic;
-    border-radius: 25px;
-    background-color: #19702f;
-    border: 4px solid #1f7a36;
-    color: #1ac244;
-    box-shadow: 3px 3px 30px #19702f;
+
     cursor: pointer;
     margin: 20px 0px;
     transition: 0.5s;
 }
 .btn-dado:hover{
-    background-color: #1A4E27;
-    border: 4px solid #19702f;
-    color: #29d655;
-    box-shadow: 3px 3px 30px #29d655;
+    background-image:linear-gradient(#008156, #4CDD70);
+    box-shadow: 0px 0px 30px #29d655;
 }
 .btn-limpar{
+    background-image:linear-gradient(#008156, #225e31);
+    border: none;
+    border-radius: 15px;
+    color: #97f7af;
+    box-shadow: 0px 0px 30px black;
+
     width: 50%;
     padding: 5px;
-    font-size: 17px;
+
+    font-size: 15px;
     font-weight: bold;
     font-style: italic;
-    border-radius: 25px;
-    background-color: #19702f;
-    border: 2px solid #1f7a36;
-    color: #1ac244;
-    box-shadow: 3px 3px 30px #19702f;
+
     cursor: pointer;
     margin: 20px 0px;
     transition: 0.5s;
 }
 .btn-limpar:hover{
-    background-color: #1A4E27;
-    border: 2px solid #19702f;
-    color: #29d655;
-    box-shadow: 3px 3px 30px #29d655;
+    background-image:linear-gradient(#008156, #4CDD70);
+    box-shadow: 0px 0px 30px #29d655;
 }
 
 .btn-stats-select{
@@ -488,10 +500,9 @@ body{
 }
 
 .dado-livre-view{
-    background-color: #1a4e27;
     border-radius: 35px;
     margin: 20px;
-    color: #16b13d;
+    color: #97f7af;
 
     text-align: center;
     justify-content: center;
@@ -510,19 +521,24 @@ body{
 .result-dado-livre{
     font-size: 45px;
     font-weight: bold;
-    background-color: #174622;
+    background-color: #3F2D24;
     border-radius: 100px;
     margin: 5px 40%;
     padding: 5% 5px;
+    text-shadow: 0px 0px 30px #97f7af;
 }
 
 /*------------------------------------------------------------------------*/
 
 .monstros-select{
-    background-color: #1a4e27;
+    background-image: url(/IMAGES/fundo-grid-acoes-4.png);
+    background-size: cover;
+    background-position: center;
     border-radius: 35px;
     margin: 20px;
-    color: #16b13d;
+    color: #97f7af;
+    text-shadow: 0px 0px 30px #0cff49;
+    box-shadow: 0px 0px 30px #97f7af;
     
     display: flex;
     flex-direction: column;
@@ -560,11 +576,14 @@ body{
 
 .monstro-resultado h1{
     font-weight: bold;
+    color: #97f7af;
 }
 .monstro-resultado p{
     margin: 5px 50px 10px 50px;
     font-style: italic;
     font-size: 18px;
+    text-shadow: 0px 0px 30px black;
+    color: #97f7af;
 }
 
 .vidas {
@@ -579,7 +598,7 @@ body{
     font-size: 24px;
     margin-bottom: 10px;
     cursor: pointer;
-    color: white;
+    color: #97f7af;
     filter:drop-shadow(0px 0px 10px #1ac244);
     transition: transform 0.2s ease;
 }
@@ -588,32 +607,39 @@ body{
 }
 
 .btn-monstro{
-    width: 60%;
-    padding: 10px;
+    background-image:linear-gradient(#008156, #225e31);
+    border: none;
+    border-radius: 15px;
+    color: #97f7af;
+    box-shadow: 0px 0px 30px black;
+
+    width: 80%;
+    padding: 8px;
+
     font-size: 25px;
     font-weight: bold;
     font-style: italic;
-    border-radius: 25px;
-    background-color: #19702f;
-    border: 4px solid #1f7a36;
-    color: #1ac244;
-    box-shadow: 3px 3px 30px #19702f;
+
     cursor: pointer;
     margin: 20px 0px;
     transition: 0.5s;
 }
 .btn-monstro:hover{
-    background-color: #1A4E27;
-    border: 4px solid #19702f;
-    color: #29d655;
-    box-shadow: 3px 3px 30px #29d655;
+    background-image:linear-gradient(#008156, #4CDD70);
+    box-shadow: 0px 0px 30px #29d655;
 }
 
+/*---------------------------------------------------------------*/
+
 .alteradores{
-    background-color: #1a4e27;
+    background-image: url(/IMAGES/fundo-grid-acoes-3.png);
+    background-size: cover;
+    background-position: center;
     border-radius: 35px;
     margin: 20px;
-    color: #16b13d;
+    color: #97f7af;
+    text-shadow: 0px 0px 30px #0cff49;
+    box-shadow: 0px 0px 30px #97f7af;
     
     display: flex;
     flex-direction: column;
@@ -625,45 +651,50 @@ body{
 .alteradores img{
     width: 40%;
     margin-bottom: 35px;
-    box-shadow: 0px 0px 20px #1ac244;
+    box-shadow: 0px 0px 20px #E7C700;
     transition: 0.5s;
 }
 .alteradores img:hover{
-    transform: scale(1.3) translateY(-10%);
-    box-shadow: 0px 0px 40px #1AC244;
+    transform: scale(1.4);
+    box-shadow: 0px 0px 40px yellow;
     border-radius: 5px;
     z-index: 0;
 }
 
 .btn-destino{
+    background-image:linear-gradient(#008156, #225e31);
+    border: none;
+    border-radius: 15px;
+    color: #97f7af;
+    box-shadow: 0px 0px 30px black;
+
     width: 80%;
+    padding: 10px;
+
     font-size: 25px;
-    padding: 8px;
     font-weight: bold;
     font-style: italic;
-    border-radius: 25px;
-    background-color: #19702f;
-    border: 4px solid #1f7a36;
-    color: #1ac244;
-    box-shadow: 3px 3px 30px #19702f;
+
     cursor: pointer;
-    margin-bottom: 40px;
+    margin: 20px 0px 40px 0px;
     transition: 0.5s;
 }
 .btn-destino:hover{
-    background-color: #1A4E27;
-    border: 4px solid #19702f;
-    color: #29d655;
-    box-shadow: 3px 3px 30px #29d655;
+    background-image:linear-gradient(#008156, #4CDD70);
+    box-shadow: 0px 0px 30px #29d655;
 }
 
 /*------------EVENTOS DO DESTINO------------------------*/
 
 .evento-destino{
-    background-color: #1a4e27;
+    background-image: url(/IMAGES/fundo-grid-acoes-2.png);
+    background-size: cover;
+    background-position: center;
     border-radius: 35px;
     margin: 20px;
-    color: #16b13d;
+    color: #4cdd70;
+    text-shadow: 0px 0px 30px #0cff49;
+    box-shadow: 0px 0px 30px #175A32;
     
     display: flex;
 
@@ -694,34 +725,34 @@ body{
     text-align: center;
 
     background-color: #307e43;
-    box-shadow: 0px 0px 10px black;
-    color: gold;
+    box-shadow: 0px 0px 10px #97f7af;
+    color: #97f7af;
+    text-shadow: 0px 0px 10px black;;
 
     font-weight: bold;
     font-size: 35px;
 }
 .evento-opcoes button{
+    background-image:linear-gradient(#008156, #225e31);
+    border: none;
+    border-radius: 15px;
+    color: #97f7af;
+    box-shadow: 0px 0px 30px black;
+
     width: 80%;
+    padding: 10px;
+
     font-size: 25px;
-    padding: 8px;
     font-weight: bold;
     font-style: italic;
-    border-radius: 25px;
-
-    background-color: #19702f;
-    border: 4px solid #1f7a36;
-    color: #1ac244;
-    box-shadow: 3px 3px 30px #19702f;
 
     cursor: pointer;
-    margin-bottom: 40px;
+    margin: 20px 0px 40px 0px;
     transition: 0.5s;
 }
 .evento-opcoes button:hover{
-    background-color: #1A4E27;
-    border: 4px solid #19702f;
-    color: #29d655;
-    box-shadow: 3px 3px 30px #29d655;
+    background-image:linear-gradient(#008156, #4CDD70);
+    box-shadow: 0px 0px 30px #29d655;
 }
 
 /*----------------*/
@@ -732,13 +763,17 @@ body{
 
 .ovo-chocado{
     display: none;
+    color: #97f7af;
 }
 .ovo-chocado img{
     width: 70%;
+    box-shadow: 0px 0px 30px #97f7af;
 }
 .ovo-chocado p{
     width: 80%;
     font-size: 20px;
+    text-shadow: 0px 0px 20px black;
+    color: #97f7af;
 }
 .vida-dragao{
     display: flex;
@@ -750,7 +785,8 @@ body{
     cursor: pointer;
     transition: 0.5s;
     font-size: 40px;
-    text-shadow: 0px 0px 30px #29d655;
+    text-shadow: 0px 0px 30px #97f7af;
+    color: #97f7af;
 }
 .vida-dragao p:hover{
     transform: scale(1.5);
