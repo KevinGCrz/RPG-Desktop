@@ -11,6 +11,33 @@ body{
     background-color: #181A1F;
 }
 
+/*------------------------------------------------------------------------*/
+
+header{
+    height: 2vh;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+    display: flex;
+    gap: 80px;
+    color: white;
+    transition: 0.3s;
+    opacity: 10%;
+}
+
+header:hover{
+    height: 6vh;
+    opacity: 100%;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------*/
+
 .layout-0{
 
     max-width: 100%;
@@ -21,6 +48,7 @@ body{
     text-align: center;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 
     background-image: url(/IMAGES/fundo-pagina.png);
 }
@@ -30,7 +58,7 @@ body{
     background-size: cover;
     border-radius: 20px;
     padding: 25px;
-    margin: 0px 10px;
+    margin-left: 5px;
     height: 95vh;
 }
 
@@ -138,10 +166,10 @@ body{
 
 .grid-02{
     width: 100%;
-    max-height: 100vh;
+    max-height: 95vh;
     overflow-y: scroll;
     margin: 0px 0px;
-    padding: 0px 0px;
+    padding: 50px 0px;
     z-index: 1;
 }
 .grid-02::-webkit-scrollbar {
@@ -422,11 +450,14 @@ body{
     justify-content: center;
     align-items: center;
 
-    padding: 90px 0px;
+    padding: 50px 0px;
 }
 .acoes-jogadores h1{
     width: 70%;
     font-size: 25px;
+}
+.acoes-jogadores p{
+    margin: 30px 0px;
 }
 
 .btn-dado{
