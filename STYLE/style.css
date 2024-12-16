@@ -5,6 +5,7 @@
     left: 0;
     box-sizing: border-box;
     font-family: 'montserrat';
+    text-decoration: none;
 }
 
 body{
@@ -14,7 +15,7 @@ body{
 /*------------------------------------------------------------------------*/
 
 header{
-    height: 2vh;
+    height: 3vh;
     width: 100%;
     text-align: center;
     align-items: center;
@@ -24,12 +25,29 @@ header{
     gap: 80px;
     color: white;
     transition: 0.3s;
-    opacity: 10%;
+    opacity: 20%;
 }
 
 header:hover{
     height: 6vh;
     opacity: 100%;
+}
+
+h1{
+    font-family: "Lugrasimo", cursive;
+}
+
+header a{
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    text-shadow: 0px 0px 20px #1F774F;
+    transition: 0.4s;
+}
+header a:hover{
+    color: #27f598;
+    transform: scale(1.1);
 }
 
 
@@ -60,6 +78,7 @@ header:hover{
     padding: 25px;
     margin-left: 5px;
     height: 95vh;
+    box-shadow: 3px 3px 30px black;
 }
 
 .mapa-image{
@@ -410,6 +429,7 @@ header:hover{
     background-image: url(/IMAGES/layout-grid4.png);
     background-size: cover;
     background-position: center;
+    box-shadow: 0px 0px 30px green;
 
     border-radius: 20px;
     padding: 10px;

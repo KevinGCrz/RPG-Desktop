@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entendendo o jogo</title>
+
+     <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../IMAGES/favicon-32x32.png">
+
+    <link rel="stylesheet" href="../STYLE/style-rules.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="./JS/script.js"></script>
+</head>
+
+<header>
+    <a href="/index.html">Voltar para o jogo</a>
+    <p>|</p>
+    <a href="https://github.com/KevinGCrz">GitHub</a>
+</header>
+
+<body>
+
+    <div class="guia">
+        <a href="#classes">Classes</a>
+        <p>|</p>
+        <a href="#dados">Testando a sorte</a>
+        <p>|</p>
+        <a href="#monstro">Monstros</a>
+        <p>|</p>
+        <a href="#destino">Cartas do destino</a>
+        <p>|</p>
+        <a href="#sobre">Sobre</a>
+    </div>
+
+    <div class="regras-gerais">
+        <h1>Principais Mecânicas</h1>
+        <p>Ratazanas do Mar é um RPG desenvolvido com a premissa de oferecer regras simplificadas, proporcionando uma experiência satisfatória tanto para jogadores experientes quanto para aqueles que nunca tiveram contato com esse tipo de jogo.
+            Com sua versão adaptada para o digital, o jogo oferece flexibilidade para ser aproveitado da maneira que você preferir: seja presencialmente, com um notebook à mesa, ou remotamente, por meio de videochamadas, com o mestre compartilhando sua tela.
+        </p>
+        </br>
+        <p>
+        O objetivo de Ratazanas do Mar é que todos os jogadores alcancem o final da ilha, atravessando suas 10 regiões. Para avançar, é necessário derrotar um chefe em cada arena. Na última região, os jogadores deverão enfrentar 2 monstros sorteados para completar a jornada.
+        </p>
+        </br>
+
+        <div class="bloco regras-classes" id="classes">
+            <h1>Classes</h1>
+
+            <div class="texto-1-1">
+                <div class="texto">
+                    <p>Em Ratazanas do Mar, as classes foram cuidadosamente pré-definidas para que o jogo esteja pronto para ser jogado, permitindo que os jogadores foquem sua criatividade na criação de seus personagens. Pensando na praticidade do formato digital, todos os campos do jogo são editáveis, garantindo maior personalização e dinamismo.
+                    </br>
+                    </br>
+                        As ações dos jogadores são simplificadas em três atributos principais: Força, Agilidade e Percepção. Esses atributos são usados pelo mestre para decidir qual terá maior peso nas decisões das ações, tornando o sistema intuitivo e rápido de usar.
+                    </br>
+                    </br>
+                        Cada atributo em Ratazanas do Mar possui um valor padrão, mas o jogo conta com mecânicas que permitem a manipulação desses números. O mestre tem total liberdade para alterar os valores a qualquer momento, ajustando o jogo conforme a necessidade ou o desenrolar da aventura.
+                    </br>
+                    </br>
+                        Para facilitar ainda mais a experiência do jogador, os ícones de vida são clicáveis, permitindo uma visualização clara e prática da quantidade de pontos de vida restante.
+                    </br>
+                    </br>
+                        O botão "Meu Turno" ajuda a situar o jogador sobre sua vez na rodada, enquanto o contador de rodadas ao lado mantém a organização da mesa, evitando confusões sobre a ordem de quem deve jogar.
+                    </p>
+                </div>
+                <img src="../IMAGES/tutorial/image-01.PNG" alt="">
+            </div>
+            
+    
+            <h1>Classes e suas habilidades únicas</h1>
+                <ul>
+                    <li>Mercenário</li>
+                    <p>O Mercenário possui a habilidade especial de buscar o ponto fraco do monstro da arena. Se ele for bem-sucedido, o ponto fraco será exposto, permitindo que apenas ele cause um dano crítico de 2 pontos de vida ao monstro. Essa ação tem um custo de 1 turno.</p>
+                </br>
+                    <li>Cozinheiro</li>
+                    <p>O Cozinheiro é o único capaz de preparar algo para restaurar 1 ponto de vida, seja para si mesmo ou para um aliado. Essa ação tem um custo de 1 turno.</p>
+                </br>
+                    <li>Feiticeiro</li>
+                    <p>O Feiticeiro tem a habilidade de dominar a consciência do monstro da arena, fazendo com que ele fique sob seu controle por 1 turno completo. Essa ação tem um custo de 2 turnos, exigindo dois testes de Percepção bem-sucedidos consecutivos.</p>
+                </br>
+                    <li>Apostador</li>
+                    <p>O Apostador tem a habilidade de rodar o dado de Percepção mais de uma vez, caso a primeira tentativa não seja bem-sucedida. Essa ação só pode ser realizada para testes de Percepção e tem o custo de 1 turno futuro, que será perdido ao fazer o segundo teste.</p>
+                </br>
+                    <li>Bombardeiro</li>
+                    <p>O Bombardeiro pode criar uma bomba utilizando recursos disponíveis nas proximidades, causando 2 pontos de dano ao monstro da arena. Essa ação tem um custo de 1 turno.</p>
+                </br>
+                    <li>Mestre das feras</li>
+                    <p>O Mestre das Feras tem a habilidade de direcionar efeitos negativos e dano para suas criaturas, protegendo-se assim. Ele controla as seguintes criaturas:
+                        Mestre das Feras: 3 pontos de vida
+                        Papagaio: 2 pontos de vida
+                        Criatura na Jaula: 1 ponto de vida
+                        Se o Papagaio for perdido, o Mestre das Feras sofre uma redução de -2 pontos de Percepção. Se a Criatura na Jaula for perdida, ele perde -1 ponto de Força.
+                    </p>
+                </br>
+                    <li>Druida</li>
+                    <p>O Druida tem a habilidade de se transformar em uma criatura escolhida, ganhando 2 pontos de vida extras e 2 pontos de Força.
+    
+                        Se os 2 pontos de vida extras forem perdidos, o Druida retorna à sua forma original, perdendo também a Força extra.
+                        
+                        Essa habilidade tem um custo de 1 turno e exige dois testes bem-sucedidos no atributo escolhido. Pode ser utilizada apenas uma vez durante o jogo.
+                    </p>
+                </br>
+                    <li>Viking</li>
+                    <p>O Viking pode se colocar como escudo humano, recebendo o dano de qualquer aliado. No entanto, ele perde seu próximo turno para se recuperar do ataque.</p>
+    
+                </ul>
+        </div>
+
+        <div class="bloco regras-dados" id="dados">
+            <h1>Testando sua sorte</h1>
+            <p>Para determinar se sua ação será bem-sucedida ou não, é essencial que o botão "Meu Turno" esteja ativado, garantindo que seus atributos sejam levados para o julgamento do destino. O mestre selecionará o atributo mais relevante para a ação clicando em uma das bolinhas indicadoras. Em seguida, o resultado será decidido ao apertar o botão "Rodar Sorte".
+                </br>
+                </br>
+            <div class="image-1-1">
+                <img src="../IMAGES/tutorial/image-02.PNG" alt="">
+
+                <img src="../IMAGES/tutorial/image-03.PNG" alt="">
+            </div>
+                </br>
+                </br>
+                O Dado Livre é reservado para situações específicas, geralmente envolvendo testes relacionados às Cartas do Destino. Mas não se preocupe, falaremos mais sobre elas em breve.
+            </br>
+            <img src="../IMAGES/tutorial/image-04.PNG" alt="">
+            </br>
+            </p>
+        </div>
+
+        <div class="bloco regras-monstro" id="monstro">
+            <h1>Monstros</h1>
+            <p>
+                O mapa de Ratazanas do Mar é dividido em 10 regiões, e cada arena conta com um chefe que os jogadores precisam derrotar para avançar na jornada. A maneira como a narrativa se desenrola fica a critério do mestre, garantindo flexibilidade e criatividade no desenvolvimento da história.
+            </br>
+            <img src="../IMAGES/tutorial/image-05.PNG" alt="">
+            </br>
+                Antes de iniciar uma nova arena, o mestre deve sortear o monstro clicando no botão "Sortear o Monstro". Cada monstro possui uma quantidade específica de pontos de vida, representados por corações clicáveis. Essa funcionalidade facilita a visualização e o acompanhamento de quantas vidas o monstro ainda possui, tornando o controle mais prático e intuitivo.
+            </br>
+            <img src="../IMAGES/tutorial/image-06.PNG" alt="">
+            </br>
+            </p>
+        </div>
+
+        
+        <div class="bloco regras-cartas-destino" id="destino">
+            <h1>Cartas do destino</h1>
+            <p>
+                As Cartas do Destino foram criadas para adicionar um elemento imprevisível à narrativa, podendo ajudar os jogadores ou tornar sua jornada ainda mais desafiadora. Cada carta apresenta uma situação única, que pode ser benéfica ou maléfica. Devido a essa natureza imprevisível, as cartas só podem ser puxadas pelos jogadores, mediante votação, em qualquer momento do jogo.
+            </br>
+            <img src="../IMAGES/tutorial/image-07.PNG" alt="">
+            </br>
+                No entanto, existe um limite de até 8 cartas ativas. Caso os jogadores desejem puxar mais cartas, será necessário abrir mão de uma puxada anterior. Apenas cartas relacionadas a itens, ações utilitárias ou maldições já curadas podem ser removidas do banco. Cartas cujo efeito expirou naturalmente, sem a influência dos jogadores, permanecem no banco e não podem ser descartadas.
+            </br>
+            <img src="../IMAGES/tutorial/image-08.PNG" alt="">
+            </br>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="sobre-jogo" id="sobre">
+        <h1>Sobre</h1>
+        <p>Em 2020, durante o curso de Design Gráfico, desenvolvi meu TCC: um jogo de tabuleiro de RPG.
+            Esse foi meu primeiro grande projeto, onde coloquei a mão na massa para criar algo do zero, desde as mecânicas até a identidade visual, tudo feito com muito cuidado e dedicação. A entrega foi um sucesso, mas, infelizmente, o projeto acabou ficando na gaveta, e nunca tive a chance de transformá-lo em um jogo físico.
+            Com o tempo, minha trajetória mudou. Me aprofundei na área de programação e desenvolvimento, e foi assim que surgiu uma nova oportunidade: trazer aquele projeto especial para o mundo digital. Agora, o jogo está disponível online, acessível a todos, permitindo que cada jogador explore e aproveite da maneira que preferir.
+            Estou aberto a críticas e sugestões, pois acredito que sempre há espaço para melhorias. Enquanto eu não estiver completamente satisfeito, continuarei atualizando e refinando este projeto, mantendo vivo o mesmo entusiasmo que tive ao criá-lo pela primeira vez.
+        </p>
+        <br>
+        <p>Todas as ilustrações utilizadas foram reaproveitadas das que estavam no TCC, mas boa parte do conteúdo visual, incluindo as ilustrações das Cartas do Destino e dos Monstros, foram geradas por inteligência artificial.</p>
+    </div>
+
+</body>
+
+<footer>
+    <p>Desenvolvido por Kevin Gomes da Cruz / 2025</p>
+</footer>
+
+</html>

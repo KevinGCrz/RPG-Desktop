@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    font-size: 20px;
+    text-decoration: none;
+}
+
+body{
+    background-color: #181A1F;
+    color: aliceblue;
+}
+
+h1{
+    font-family: "Lugrasimo";
+    color: rgb(255, 255, 143);
+    text-shadow: 0px 0px 50px black;
+    margin: 15px 0px;
+    font-size: 35px;
+}
+
+header{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    padding: 45px;
+    background-color: #424753;
+}
+header a{
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 25px;
+    text-shadow: 0px 0px 20px #1F774F;
+    transition: 0.4s;
+}
+header a:hover{
+    color: #27f598;
+    transform: scale(1.1);
+}
+
+
+/*---------------------------------------------------------*/
+
+.sobre-jogo{
+    margin: 0 auto;
+    text-align: center;
+
+    background-image: url(../IMAGES/fundo-grid-acoes.png);
+    background-size: cover;
+    background-position: center;
+
+    padding: 85px;
+    text-shadow: 0px 0px 20px black;
+
+}
+.sobre-jogo p{
+    font-size: 25px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.guia{
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+
+    background-image: url(../IMAGES/fundo-carrosel-cartas.png);
+    padding: 45px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 20px #1F774F;
+}
+.guia a{
+    color: #11bb6e;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 25px;
+    text-shadow: 0px 0px 20px #1F774F;
+    transition: 0.4s;
+}
+.guia a:hover{
+    color: #27f598;
+    transform: scale(1.1);
+}
+
+
+/*----------------------------*/
+
+.regras-gerais{
+    width: 80%;
+    margin: 0 auto;
+    padding: 35px;
+    text-shadow: 0px 0px 20px black;
+}
+
+.bloco{
+    padding: 35px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 30px black;
+
+}
+
+.texto-1-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.texto-1-1 img{
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 50px black;
+}
+
+.image-1-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.image-1-1 img{
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px black;
+}
+
+li{
+    font-weight: bold;
+    color: rgb(255, 255, 143);
+    font-family: "Lugrasimo";
+    text-shadow: 0px 0px 30px black;
+}
+
+.regras-classes{
+    background-image: url(../IMAGES/layout-player2.png);
+    background-size: cover;
+    box-shadow: 0px 0px 30px black;
+    text-shadow: 0px 0px 20px black;
+}
+/*-----*/
+.regras-dados{
+    background-image: url(../IMAGES/fundo-grid-acoes.png);
+    text-align: center;
+    text-shadow: 0px 0px 20px black;
+}
+.regras-dados img{
+    box-shadow: 0px 0px 20px black;
+    margin-top: 25px;
+}
+/*-----*/
+.regras-monstro{
+    background-image: url(../IMAGES/fundo-grid-acoes-4.png);
+    text-align: center;
+    text-shadow: 0px 0px 20px black;
+}
+.regras-monstro img{
+    box-shadow: 0px 0px 20px black;
+    margin: 25px 0px;
+}
+/*-----*/
+.regras-cartas-destino{
+    background-image: url(../IMAGES/fundo-grid-acoes-3.png);
+    text-align: center;
+    text-shadow: 0px 0px 20px black;
+}
+.regras-cartas-destino img{
+    box-shadow: 0px 0px 20px black;
+    margin: 25px 0px;
+}
+
+/*------------------------------FOOTER-------------------------------*/
+
+footer{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #09492d;
+}
+footer p{
+    padding: 40px;
+    color: white;
+}
