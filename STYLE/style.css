@@ -72,7 +72,7 @@ header a:hover{
 }
 
 .grid-01{
-    background-image: url(/IMAGES/fundo-grid1.png);
+    background-image: url(../IMAGES/fundo-grid1.png);
     background-size: cover;
     border-radius: 20px;
     padding: 25px;
@@ -104,7 +104,7 @@ header a:hover{
 }
 
 .toggle-visibility {
-    background-image: url(/IMAGES/layout-player2.png);
+    background-image: url(../IMAGES/layout-player2.png);
     color: rgb(255, 239, 97);
     font-weight: bold;
     border: none;
@@ -122,7 +122,7 @@ header a:hover{
     width: 95%;
     margin: 0 auto;
     height: 180px;
-    background-image: url(/IMAGES/fundo-carrosel-cartas.png);
+    background-image: url(../IMAGES/fundo-carrosel-cartas.png);
     background-position: center;
     
     border-radius: 25px;
@@ -210,7 +210,7 @@ header a:hover{
 
   
 .jogador-char{
-    background-image: url(/IMAGES/layout-player.png);
+    background-image: url(../IMAGES/layout-player.png);
     background-size:cover;
     padding: 20px;
     margin: 15px;
@@ -426,7 +426,7 @@ header a:hover{
     max-height: 95vh;
     overflow-y: scroll;
     
-    background-image: url(/IMAGES/layout-grid4.png);
+    background-image: url(../IMAGES/layout-grid4.png);
     background-size: cover;
     background-position: center;
     box-shadow: 0px 0px 30px green;
@@ -454,7 +454,7 @@ header a:hover{
 /*------------------------------------------------------------------------*/
 
 .acoes-jogadores{
-    background-image: url(/IMAGES/fundo-grid-acoes.png);
+    background-image: url(../IMAGES/fundo-grid-acoes.png);
     background-size: cover;
     background-position: center;
     border-radius: 15px;
@@ -586,7 +586,7 @@ header a:hover{
 /*------------------------------------------------------------------------*/
 
 .monstros-select{
-    background-image: url(/IMAGES/fundo-grid-acoes-4.png);
+    background-image: url(../IMAGES/fundo-grid-acoes-4.png);
     background-size: cover;
     background-position: center;
     border-radius: 35px;
@@ -688,7 +688,7 @@ header a:hover{
 /*---------------------------------------------------------------*/
 
 .alteradores{
-    background-image: url(/IMAGES/fundo-grid-acoes-3.png);
+    background-image: url(../IMAGES/fundo-grid-acoes-3.png);
     background-size: cover;
     background-position: center;
     border-radius: 35px;
@@ -745,7 +745,7 @@ header a:hover{
 /*------------EVENTOS DO DESTINO------------------------*/
 
 .evento-destino{
-    background-image: url(/IMAGES/fundo-grid-acoes-2.png);
+    background-image: url(../IMAGES/fundo-grid-acoes-2.png);
     background-size: cover;
     background-position: center;
     border-radius: 35px;
