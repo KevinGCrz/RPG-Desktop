@@ -68,7 +68,7 @@ header a:hover{
     justify-content: center;
     padding: 20px;
 
-    background-image: url(/IMAGES/fundo-pagina.png);
+    background-image: url(../IMAGES/fundo-pagina.png);
 }
 
 .grid-01{
