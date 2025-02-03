@@ -602,6 +602,69 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+//-----------------------------------------------------INICIAR JORNADA
+
+document.addEventListener("DOMContentLoaded", function() {
+    const iniciarJornadaBtn = document.querySelector(".btn-jornada");
+    const jogadorChars = document.querySelectorAll(".jogador-char");
+    const proxRodadaBtn = document.querySelector(".btn-jornada[style='display: none;']");
+
+    iniciarJornadaBtn.addEventListener("click", function() {
+        // Para cada 'jogador-char', verifica se o campo de nome está preenchido
+        jogadorChars.forEach(jogador => {
+            const inputName = jogador.querySelector(".name input");
+            if (inputName && inputName.value.trim() === "") {
+                // Esconde o jogador-char se o nome estiver vazio
+                jogador.style.display = "none";
+            } else {
+                // Garante que os jogadores com nome preenchido permaneçam visíveis
+                jogador.style.display = "block";
+            }
+        });
+
+        // Trocar o texto do botão
+        iniciarJornadaBtn.style.display = "none";
+        proxRodadaBtn.style.display = "inline-block";
+    });
+});
+
+//-----------------------------------------------------RANDOMIZAR JOGADORES ORDEM
+
+document.addEventListener("DOMContentLoaded", function() {
+    const proxRodadaBtn = document.querySelector(".btn-jornada[style='display: none;']");
+    const jogadorChars = document.querySelectorAll(".jogador-char");
+    
+    proxRodadaBtn.addEventListener("click", function() {
+        // Filtra os jogadores que estão visíveis (com nome preenchido)
+        const jogadoresAtivos = Array.from(jogadorChars).filter(jogador => {
+            const inputName = jogador.querySelector(".name input");
+            return inputName && inputName.value.trim() !== "";
+        });
+
+        // Embaralha a lista de jogadores ativamente visíveis
+        const jogadoresEmbaralhados = shuffleArray(jogadoresAtivos);
+
+        // Reorganiza a ordem dos jogadores no DOM
+        const containerJogadores = document.querySelector(".jogadores");
+        jogadoresEmbaralhados.forEach(jogador => {
+            containerJogadores.appendChild(jogador); // Move os jogadores para a nova ordem
+        });
+    });
+
+    // Função para embaralhar um array aleatoriamente
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Troca elementos
+        }
+        return array;
+    }
+});
+
+
+
+
+
 
 
 
