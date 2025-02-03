@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const rollButton = document.querySelector('.btn-dado'); // Botão "RODAR A SORTE"
     const clearButton = document.querySelector('.btn-limpar'); // Botão "Limpar resultado"
     const currentClassTitleDisplay = document.querySelector('.acoes-jogadores h1:nth-of-type(1)'); // "A vez de..."
-    const diceNumberDisplay = document.querySelector('.acoes-jogadores h1:nth-of-type(2)'); // Número do dado
-    const resultParagraph = document.querySelector('.acoes-jogadores p');
+    const diceNumberDisplay = document.querySelector('.acoes-jogadores .resultado-dado-space h1'); // Número do dado
+    const resultParagraph = document.querySelector('.acoes-jogadores .result'); // Resultado do dado
     const statsButtons = statusSelectedDiv ? statusSelectedDiv.querySelectorAll('.btn-stats-select') : [];
 
     if (statsButtons.length === 0) {
@@ -61,33 +61,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lógica para rodar o dado e calcular o resultado
     rollButton.addEventListener('click', () => {
-        if (selectedStatus === null) {
-            resultParagraph.textContent = "Por favor, selecione um status para o teste.";
-            return;
-        }
+        const resultSpace = document.querySelector('.resultado-dado-space');
+        resultSpace.classList.add('rotate-fast'); // Ativa a rotação rápida do fundo
 
-        const randomRoll = Math.floor(Math.random() * 20) + 1; // Número entre 1 e 20
-        const statusValue = parseInt(statsButtons[selectedStatus].textContent, 10) || 0;
-        const total = randomRoll + statusValue;
+        // Aguarda a rotação acabar para exibir o resultado
+        setTimeout(() => {
+            if (selectedStatus === null) {
+                resultParagraph.textContent = "Por favor, selecione um status para o teste.";
+                return;
+            }
 
-        let resultadoExtra = "";
+            const randomRoll = Math.floor(Math.random() * 20) + 1; // Número entre 1 e 20
+            const statusValue = parseInt(statsButtons[selectedStatus].textContent, 10) || 0;
+            const total = randomRoll + statusValue;
 
-        // Atualiza o número do dado na interface
-        diceNumberDisplay.textContent = `${randomRoll}`;
-        
-        // Exibe o resultado inicial
-        resultParagraph.innerHTML = `
-            Número sorteado: ${randomRoll}, Soma: ${total}. 
-        `;
-        if (total >= 25) {
-            resultParagraph.innerHTML += " Ação bem sucedida!";
-            resultadoExtra = " Ação bem sucedida!";
-        } else {
-            resultParagraph.innerHTML += " Ação falhou!";
-            resultadoExtra = " Ação falhou!";
-        }
+            let resultadoExtra = "";
 
-                // Aplica as mensagens adicionais baseadas no resultado e adiciona classes
+            // Atualiza o número do dado na interface
+            diceNumberDisplay.textContent = `${randomRoll}`;
+            
+            // Exibe o resultado inicial
+            resultParagraph.innerHTML = `Número sorteado: ${randomRoll}, Soma: ${total}.`;
+
+            if (total >= 25) {
+                resultParagraph.innerHTML += " Ação bem sucedida!";
+                resultadoExtra = " Ação bem sucedida!";
+            } else {
+                resultParagraph.innerHTML += " Ação falhou!";
+                resultadoExtra = " Ação falhou!";
+            }
+
+            // Aplica as mensagens adicionais baseadas no resultado e adiciona classes
             let extraMessage = "";
             resultParagraph.classList.remove("result-dado-acertoCritico", "result-dado-acerto", "result-dado-falha", "result-dado-falhaCritica");
 
@@ -112,8 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (extraMessage) {
                 resultParagraph.innerHTML += `<br>${extraMessage}`;
             }
-    });
 
+        }, 500); // Após 0.5 segundos, mostra o resultado
+
+        // Remove a animação de rotação rapidamente
+        setTimeout(() => {
+            resultSpace.classList.remove('rotate-fast');
+        }, 500); // A rotação dura 0.5 segundos
+    });
 
     // Lógica para limpar os resultados
     clearButton.addEventListener('click', () => {
@@ -126,16 +136,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
 //-----------------------------------------------------D20 LIVRE 
 document.addEventListener("DOMContentLoaded", () => {
     const btnDado = document.querySelector(".dado-livre-view .btn-dado");
     const btnLimpar = document.querySelector(".dado-livre-view .btn-limpar");
-    const resultDisplay = document.querySelector(".dado-livre-view .result-dado-livre");
+    const resultDisplay = document.querySelector(".dado-livre-view .resultado-dado-space-2 h1");
+    const resultSpace = document.querySelector(".dado-livre-view .resultado-dado-space-2");
 
     // Evento para rodar o dado
     btnDado.addEventListener("click", () => {
-        const resultado = Math.floor(Math.random() * 20) + 1; // Gera um número entre 1 e 20
-        resultDisplay.textContent = resultado; // Exibe o resultado no parágrafo
+        // Inicia a animação de rotação rápida
+        resultSpace.classList.add("rotate-fast");
+
+        // Aguarda 0.5 segundos para mostrar o resultado
+        setTimeout(() => {
+            const resultado = Math.floor(Math.random() * 20) + 1; // Gera um número entre 1 e 20
+            resultDisplay.textContent = resultado; // Exibe o resultado no h1 dentro de "resultado-dado-space"
+        }, 500); // Espera 0.5 segundos para exibir o resultado
+
+        // Remove a animação de rotação após 0.5 segundos
+        setTimeout(() => {
+            resultSpace.classList.remove("rotate-fast");
+        }, 500); // A rotação dura 0.5 segundos
     });
 
     // Evento para limpar o resultado
@@ -246,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Iguana gigante",
             imagem: "./IMAGES/Monsters/monster-Iguana.jpg",
             desc:"Uma enorme e majestosa criatura da ilha, cuidado que a aparência pacifica esconde sua fome por carne",
-            coracoes: 5
+            coracoes: 6
         },
         {
             nome: "3 Goblins saqueadores",
@@ -255,10 +280,10 @@ document.addEventListener("DOMContentLoaded", () => {
             coracoes: 6
         },
         {
-            nome: "CRIAR NOVO",
-            imagem: "./IMAGES/prop-monster.png",
-            desc:"VAZIO",
-            coracoes: 5
+            nome: "Caçador de cabeças e seu Carniceiro",
+            imagem: "./IMAGES/Monsters/monster-Hunter.jpg",
+            desc:"Um caçador(4 pontos de vida) furioso cego pela sede de sangue montado em seu fiel Carniceiro(4 pontos de vida), uma besta feroz que só conhece violência",
+            coracoes: 8
         },
         {
             nome: "2 Hienas demoniacas",
@@ -282,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Homem morcego selvagem",
             imagem: "./IMAGES/Monsters/monster-HomemMorcego.jpg",
             desc:"Vitima de uma terrivel maldição cego de ódio e sede de sangue",
-            coracoes: 5
+            coracoes: 7
         },
         {
             nome: "Senhora dos afogados",
@@ -294,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Sapo touro gigante",
             imagem: "./IMAGES/Monsters/monster-SapoTouro.jpg",
             desc:"Super resistente e com uma saliva ácida letal",
-            coracoes: 6
+            coracoes: 7
         },
         {
             nome: "5 Espectros dos afogados",
@@ -306,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Pantera de duas cabeças",
             imagem: "./IMAGES/Monsters/monster-PanteraTwoHead.webp",
             desc:"Uma criatura majestosa encontrada exclusivamente nesta ilha, mas duplamente voraz",
-            coracoes: 5
+            coracoes: 6
         },
         {
             nome: "3 Aranhas gigantes",
@@ -318,13 +343,13 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Berserker zumbi",
             imagem: "./IMAGES/Monsters/monster-Berserker.jpg",
             desc:"Movido pela raiva de todos que matou na guerra arcana",
-            coracoes: 7
+            coracoes: 8
         },
         {
             nome: "Ratazana demoniaca",
             imagem: "./IMAGES/Monsters/monster-Rato.jpg",
             desc:"Voraz e frenética famosa por triturar ossos",
-            coracoes: 5
+            coracoes: 6
         },
         {
             nome: "Hidra de três cabeças",
@@ -336,7 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Golem elemental",
             imagem: "./IMAGES/Monsters/monster-Golem.jpg",
             desc:"Guardião ancestral da ilha, criado e abandonado pelos antigos feiticeiros arcanos",
-            coracoes: 7
+            coracoes: 8
         },
         {
             nome: "Caranguejo colosso",
@@ -351,10 +376,10 @@ document.addEventListener("DOMContentLoaded", () => {
             coracoes: 6
         },
         {
-            nome: "Serpente do submundo",
+            nome: "Dragão marinho",
             imagem: "./IMAGES/Monsters/monster-serpente.jpg",
             desc:"Mãe de todas serpentes do outro mundo é uma criatura temivel e lendária",
-            coracoes: 7
+            coracoes: 8
         }
     ];
 
@@ -618,7 +643,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 jogador.style.display = "none";
             } else {
                 // Garante que os jogadores com nome preenchido permaneçam visíveis
-                jogador.style.display = "block";
+                jogador.style.display = "flex";
+                jogador.style.flexDirection = "column"
             }
         });
 
