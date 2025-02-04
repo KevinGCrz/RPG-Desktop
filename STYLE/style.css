@@ -201,7 +201,6 @@ header a:hover{
 }
 
 
-
 /*------------------------------------------------------------------------*/
 
 .grid-02{
@@ -290,6 +289,41 @@ header a:hover{
     align-items: center;
     justify-content: center
 }
+
+/*------------------------------------*/
+
+.toggle-visibility.toggle-monstro{
+    background-image: url(../IMAGES/fundo-carrosel-cartas.png);
+    background-position: center;
+    box-shadow: 0px 0px 20px rgb(145, 5, 5);
+}
+
+.jogador-char.char-monstro{
+    background-image: url(../IMAGES/fundo-carrosel-cartas.png);
+    background-position: center;
+    box-shadow: 0px 0px 20px rgb(145, 5, 5);
+}
+
+.view-jogador.monstro-bloco{
+    display: flex;
+    padding: 15px;
+
+}
+
+.view-jogador.monstro-bloco h1{
+    color: rgb(255, 114, 114);
+    font-weight: bolder;
+}
+
+.view-jogador.monstro-bloco p{
+    font-size: 20px;
+    margin-top: 15px;
+    color: rgb(255, 114, 114);
+    text-shadow: 0px 0px 20px rgb(145, 5, 5);
+    font-weight: bolder;
+}
+
+/*------------------------------------*/
 
 .jogador-char img{
     width: 100%;

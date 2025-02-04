@@ -690,6 +690,75 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const iniciarJornadaBtn = document.querySelector(".btn-jornada"); // Substitua pelo seletor correto do botão
+    const charRegras = document.querySelector(".jogador-char.char-regras");
+    const charMonstro = document.querySelector(".jogador-char.char-monstro");
+
+    if (iniciarJornadaBtn && charRegras && charMonstro) {
+        iniciarJornadaBtn.addEventListener("click", () => {
+            // Esconde completamente a div das regras
+            charRegras.style.display = "none"; 
+
+            // Mostra a div do monstro
+            charMonstro.style.display = "flex"; // ou "block", dependendo do seu layout
+        });
+    } else {
+        console.warn("Elementos não encontrados. Verifique os seletores.");
+    }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const iniciarJornadaBtn = document.getElementById("iniciar-jornada"); // Botão INICIAR JORNADA
+    const proximaRodadaBtn = document.getElementById("proxima-rodada"); // Botão PROXIMA RODADA
+    const monstroDiv = document.querySelector(".char-monstro"); // Div do monstro
+    const regrasDiv = document.querySelector(".char-regras"); // Div das regras
+    const monstroAcao = document.querySelector(".char-monstro .monstro-acao"); // Texto da ação do monstro
+    const jogadores = document.querySelectorAll(".jogador-char:not(.char-monstro):not(.char-regras)"); // Todos os jogadores ativos
+
+
+     // 2️⃣ Ao clicar em PRÓXIMA RODADA, o monstro faz uma ação aleatória e a página rola para o topo
+     if (proximaRodadaBtn) {
+        proximaRodadaBtn.addEventListener("click", () => {
+            
+
+            // Filtra apenas jogadores visíveis e com nome preenchido
+            const jogadoresAtivos = Array.from(jogadores).filter(jogador => {
+                const nome = jogador.querySelector("h1")?.textContent.trim();
+                return nome && jogador.style.display !== "none";
+            });
+
+            // Sorteia um jogador ativo
+            let jogadorSorteado = jogadoresAtivos.length > 0
+                ? jogadoresAtivos[Math.floor(Math.random() * jogadoresAtivos.length)].querySelector("h1").textContent
+                : null;
+
+            // Lista de ações do monstro
+            const acoes = [
+                "O monstro não conseguiu atacar ninguém.",
+                jogadorSorteado ? `O monstro atacou ${jogadorSorteado} -1 de vida.` : "O monstro está confuso e não atacou.",
+                "O monstro está tentando se recuperar! 2 turnos sem levar dano e ele recupera 1 ponto de vida."
+            ];
+
+            // Escolhe uma ação aleatória
+            monstroAcao.textContent = acoes[Math.floor(Math.random() * acoes.length)];
+
+            // Rola para o topo da página
+            monstroDiv.scrollIntoView({ behavior: "smooth", block: "center" });
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+});
+
+
+
+
+
+
+
 
 
 
