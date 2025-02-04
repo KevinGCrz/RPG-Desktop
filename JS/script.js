@@ -688,28 +688,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const iniciarJornadaBtn = document.querySelector(".btn-jornada"); // Substitua pelo seletor correto do botão
-    const charRegras = document.querySelector(".jogador-char.char-regras");
-    const charMonstro = document.querySelector(".jogador-char.char-monstro");
-
-    if (iniciarJornadaBtn && charRegras && charMonstro) {
-        iniciarJornadaBtn.addEventListener("click", () => {
-            // Esconde completamente a div das regras
-            charRegras.style.display = "none"; 
-
-            // Mostra a div do monstro
-            charMonstro.style.display = "flex"; // ou "block", dependendo do seu layout
-        });
-    } else {
-        console.warn("Elementos não encontrados. Verifique os seletores.");
-    }
-});
-
-
-
+//-----------------------------------------------------TURNO DO MONSTRO
 
 document.addEventListener("DOMContentLoaded", () => {
     const iniciarJornadaBtn = document.getElementById("iniciar-jornada"); // Botão INICIAR JORNADA
@@ -717,19 +696,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const monstroDiv = document.querySelector(".char-monstro"); // Div do monstro
     const regrasDiv = document.querySelector(".char-regras"); // Div das regras
     const monstroAcao = document.querySelector(".char-monstro .monstro-acao"); // Texto da ação do monstro
-    const jogadores = document.querySelectorAll(".jogador-char:not(.char-monstro):not(.char-regras)"); // Todos os jogadores ativos
 
+    // Função para obter jogadores ativos (excluindo dado livre e escondidos)
+    const filtrarJogadoresAtivos = () => {
+        return Array.from(document.querySelectorAll(".jogador-char"))
+            .filter(jogador => 
+                !jogador.classList.contains("char-monstro") &&  // Exclui o monstro
+                !jogador.classList.contains("char-regras") &&   // Exclui as regras
+                !jogador.classList.contains("dado-livre-view") && // Exclui o dado livre
+                jogador.style.display !== "none" &&             // Apenas jogadores visíveis
+                jogador.querySelector("h1")?.textContent.trim() !== "" // Apenas se tiver nome
+            );
+    };
 
-     // 2️⃣ Ao clicar em PRÓXIMA RODADA, o monstro faz uma ação aleatória e a página rola para o topo
-     if (proximaRodadaBtn) {
+    // 1️⃣ Ao clicar em INICIAR JORNADA, esconde as regras e mostra o monstro
+    if (iniciarJornadaBtn) {
+        iniciarJornadaBtn.addEventListener("click", () => {
+            if (regrasDiv) regrasDiv.style.display = "none"; // Esconde as regras
+
+            if (monstroDiv) monstroDiv.style.display = "flex"; // Mostra o monstro
+
+            iniciarJornadaBtn.style.display = "none"; // Esconde o botão iniciar jornada
+
+            proximaRodadaBtn.style.display = ""; // Mostra o botão próxima rodada
+        });
+    }
+
+    // 2️⃣ Ao clicar em PRÓXIMA RODADA, o monstro age e a página rola
+    if (proximaRodadaBtn) {
         proximaRodadaBtn.addEventListener("click", () => {
-            
-
-            // Filtra apenas jogadores visíveis e com nome preenchido
-            const jogadoresAtivos = Array.from(jogadores).filter(jogador => {
-                const nome = jogador.querySelector("h1")?.textContent.trim();
-                return nome && jogador.style.display !== "none";
-            });
+            // Obtém os jogadores ativos sem o dado livre
+            const jogadoresAtivos = filtrarJogadoresAtivos();
 
             // Sorteia um jogador ativo
             let jogadorSorteado = jogadoresAtivos.length > 0
@@ -740,13 +737,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const acoes = [
                 "O monstro não conseguiu atacar ninguém.",
                 jogadorSorteado ? `O monstro atacou ${jogadorSorteado} -1 de vida.` : "O monstro está confuso e não atacou.",
-                "O monstro está tentando se recuperar! 2 turnos sem levar dano e ele recupera 1 ponto de vida."
+                "O monstro está tentando se recuperar! 3 turnos sem levar dano e ele recupera 1 ponto de vida.",
+                "O monstro rugiu ferozmente, intimidando os jogadores. Todos perdem suas habilidades desta rodada."
             ];
 
-            // Escolhe uma ação aleatória
-            monstroAcao.textContent = acoes[Math.floor(Math.random() * acoes.length)];
+            // Atualiza o texto da ação do monstro
+            if (monstroAcao) {
+                monstroAcao.textContent = acoes[Math.floor(Math.random() * acoes.length)];
+            }
 
-            // Rola para o topo da página
+            // Faz a tela rolar para o monstro e depois para o topo
             monstroDiv.scrollIntoView({ behavior: "smooth", block: "center" });
             window.scrollTo({ top: 0, behavior: "smooth" });
         });

@@ -50,7 +50,10 @@ header a:hover{
     transform: scale(1.1);
 }
 
-
+b{
+    font-weight: bold;
+    font-family: "Lugrasimo"
+}
 
 
 
@@ -322,6 +325,54 @@ header a:hover{
     text-shadow: 0px 0px 20px rgb(145, 5, 5);
     font-weight: bolder;
 }
+
+/*------------------------------------*/
+
+.passiva-char{
+    margin-top: 15px;
+    background-image: url(../IMAGES/fundo-grid-acoes-3.png);
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s;
+    box-shadow: 0px 0px 20px #0cff49;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.titulo-habilidade{
+    font-family: "Lugrasimo";
+    font-weight: bold;
+    color: #8ffcbc;
+}
+.texto-habilidade{
+    color: #8ffcbc;
+}
+
+.passiva-char .texto-habilidade {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease; /* Animação suave */
+}
+
+.passiva-char:hover .texto-habilidade {
+    opacity: 1;
+    max-height: 380px; /* Ajuste conforme o tamanho do conteúdo */
+    padding: 0px 10px 15px 10px;
+}
+
+.passiva-char:hover .titulo-habilidade {
+    opacity: 0;
+}
+
+
 
 /*------------------------------------*/
 
@@ -614,6 +665,7 @@ header a:hover{
     cursor: pointer;
     margin: 20px 0px;
     transition: 0.5s;
+    
 }
 .btn-jornada:hover{
     background-image:linear-gradient(#008156, #4CDD70);
