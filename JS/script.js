@@ -752,6 +752,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const acoes = [
                 "O monstro não conseguiu atacar ninguém.",
                 jogadorSorteado ? `O monstro atacou ${jogadorSorteado} -1 de vida.` : "O monstro está confuso e não atacou.",
+                jogadorSorteado ? `O monstro atacou ${jogadorSorteado} -1 de vida.` : "O monstro está confuso e não atacou.",
+                jogadorSorteado ? `O monstro atacou ${jogadorSorteado} -1 de vida.` : "O monstro está confuso e não atacou.",
                 "O monstro está tentando se recuperar! 3 turnos sem levar dano e ele recupera 1 ponto de vida.",
                 "O monstro rugiu ferozmente, intimidando os jogadores. Todos perdem suas habilidades desta rodada."
             ];
