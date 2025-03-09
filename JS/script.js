@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Iguana gigante",
             imagem: "./IMAGES/Monsters/monster-Iguana.jpg",
             desc:"Uma enorme e majestosa criatura da ilha, cuidado que a aparência pacifica esconde sua fome por carne",
-            coracoes: 6
+            coracoes: 7
         },
         {
             nome: "3 Goblins saqueadores",
@@ -282,8 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             nome: "Caçador de cabeças e seu Carniceiro",
             imagem: "./IMAGES/Monsters/monster-Hunter.jpg",
-            desc:"Um caçador(4 pontos de vida) furioso cego pela sede de sangue montado em seu fiel Carniceiro(4 pontos de vida), uma besta feroz que só conhece violência",
-            coracoes: 8
+            desc:"Um caçador(5 pontos de vida) furioso cego pela sede de sangue montado em seu fiel Carniceiro(4 pontos de vida), uma besta feroz que só conhece violência",
+            coracoes: 9
         },
         {
             nome: "2 Hienas demoniacas",
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Urso de guerra zumbi",
             imagem: "./IMAGES/Monsters/monster-UrsoZumbi.jpg",
             desc:"Irrefreavel e tomado por uma fome interminável",
-            coracoes: 6
+            coracoes: 8
         },
         {
             nome: "5 Esqueletos de piratas",
@@ -307,13 +307,13 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Homem morcego selvagem",
             imagem: "./IMAGES/Monsters/monster-HomemMorcego.jpg",
             desc:"Vitima de uma terrivel maldição cego de ódio e sede de sangue",
-            coracoes: 7
+            coracoes: 8
         },
         {
             nome: "Senhora dos afogados",
             imagem: "./IMAGES/Monsters/monster-senhoraAfogados.jpg",
             desc:"A maior lenda entre os piratas responsável por desaparecer com embarcações inteiras",
-            coracoes: 6
+            coracoes: 8
         },
         {
             nome: "Sapo touro gigante",
@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Pantera de duas cabeças",
             imagem: "./IMAGES/Monsters/monster-PanteraTwoHead.webp",
             desc:"Uma criatura majestosa encontrada exclusivamente nesta ilha, mas duplamente voraz",
-            coracoes: 6
+            coracoes: 7
         },
         {
             nome: "3 Aranhas gigantes",
@@ -343,19 +343,19 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Berserker zumbi",
             imagem: "./IMAGES/Monsters/monster-Berserker.jpg",
             desc:"Movido pela raiva de todos que matou na guerra arcana",
-            coracoes: 8
+            coracoes: 9
         },
         {
             nome: "Ratazana demoniaca",
             imagem: "./IMAGES/Monsters/monster-Rato.jpg",
             desc:"Voraz e frenética famosa por triturar ossos",
-            coracoes: 6
+            coracoes: 7
         },
         {
             nome: "Hidra de três cabeças",
             imagem: "./IMAGES/Monsters/monster-hydra.jpg",
             desc:"Uma criatura sinistra vinda de outro mundo, cada cabeça com dois pontos de vida",
-            coracoes: 6
+            coracoes: 9
         },
         {
             nome: "Golem elemental",
@@ -367,19 +367,19 @@ document.addEventListener("DOMContentLoaded", () => {
             nome: "Caranguejo colosso",
             imagem: "./IMAGES/Monsters/monster-Caranguejo.jpg",
             desc:"Criatura ancestral tão velha quanto a ilha mas famosa por afundar grandes barcos",
-            coracoes: 6
+            coracoes: 7
         },
         {
             nome: "Urso tubarão",
             imagem: "./IMAGES/Monsters/monster-Ursotubarao.webp",
             desc:"A brutalidade das duas criaturas mais temiveis do mar e da terra",
-            coracoes: 6
+            coracoes: 8
         },
         {
             nome: "Dragão marinho",
             imagem: "./IMAGES/Monsters/monster-serpente.jpg",
             desc:"Mãe de todas serpentes do outro mundo é uma criatura temivel e lendária",
-            coracoes: 8
+            coracoes: 10
         }
     ];
 
@@ -435,6 +435,21 @@ document.addEventListener("DOMContentLoaded", () => {
         rodada++;
     });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.monstro-livre-life p').forEach(heart => {
+        heart.addEventListener('click', function () {
+            if (this.textContent.trim() === '🧡') {
+                this.textContent = '💀';
+            } else {
+                this.textContent = '🧡';
+            }
+        });
+    });
+});
+
 
 
 

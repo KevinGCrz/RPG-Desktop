@@ -153,6 +153,8 @@ b{
 
 .cartas-destino-viradas{
     width: 95%;
+    max-width: 830px;
+
     margin: 0 auto;
     height: 180px;
     background-image: url(../IMAGES/fundo-carrosel-cartas.png);
@@ -885,6 +887,15 @@ b{
 .btn-monstro:hover{
     background-image:linear-gradient(#008156, #4CDD70);
     box-shadow: 0px 0px 30px #29d655;
+}
+
+.monstro-livre-life{
+    display: flex;
+    margin: 3%;
+    font-size: 25px;
+}
+.monstro-livre-life p:hover{
+    text-shadow: 0px 0px 20px red;
 }
 
 /*---------------------------------------------------------------*/
